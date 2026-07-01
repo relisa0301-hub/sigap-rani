@@ -1,134 +1,53 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SIGAP RANI</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIGAP RANI</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-
 <body>
-<nav>
-    <div class="brand">
-        <img src="sigaprani.png" class="navlogo">
-        <span>SIGAP RANI</span>
+
+  <header>
+    <div class="logo">SIGAP RANI</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#fitur">Fitur</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <button id="menuBtn">☰</button>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Sistem Informasi SIGAP RANI</h1>
+    <p>Absensi, monitoring, dan pelaporan digital sekolah</p>
+    <button onclick="scrollToSection('fitur')">Mulai</button>
+  </section>
+
+  <section id="fitur" class="section">
+    <h2>Fitur Utama</h2>
+    <div class="card-container">
+      <div class="card">Absensi QR Code</div>
+      <div class="card">Rekap Otomatis</div>
+      <div class="card">Monitoring Real-time</div>
     </div>
+  </section>
 
-    <div class="menu">
-        <a href="#">Beranda</a>
-        <a href="#fitur">Fitur</a>
-        <a href="#tentang">Tentang</a>
-        <a href="#kontak">Kontak</a>
-    </div>
-</nav>
-<header>
+  <section id="tentang" class="section dark">
+    <h2>Tentang Aplikasi</h2>
+    <p>SIGAP RANI adalah sistem digital untuk memudahkan absensi dan monitoring kegiatan sekolah secara cepat dan efisien.</p>
+  </section>
 
-<img src="sigaprani.png" class="logo">
+  <section id="kontak" class="section">
+    <h2>Kontak</h2>
+    <p>Email: admin@sigaprani.id</p>
+  </section>
 
-<h4>SELAMAT DATANG DI</h4>
+  <footer>
+    <p>© 2026 SIGAP RANI</p>
+  </footer>
 
-<h1>SIGAP RANI</h1>
-
-<h3>Sistem Informasi Gadget Absensi Pelajar SPENSARANI</h3>
-
-<p>
-Platform absensi digital berbasis QR Code
-yang dirancang untuk mendukung proses
-kehadiran siswa secara cepat, akurat,
-aman, dan efisien.
-</p>
-
-<a href="https://www.appsheet.com/start/a0bb851c-dfd7-4280-96a1-ba27da2ea92d?platform=desktop#appName=DATASISWASMARTATTENDQR-640092988&vss=H4sIAAAAAAAAA6XOsQ7CIBgE4He5mSdgq9rBGDuo6SIOWP4mxBaaQtWG8O5SrXFuHDny3X8Bd02Po5fVDfwcfq8djeAIAqexIwEusLbG97YRYAKFbD_hKj9kxSYTiIgX9uWeHHhYpPlftxm0IuN1ramfqiaYKmaWvieUgpkgMrSDl9eG3msTiTFlta0GR6pMQ5YPcFuTPztp1N6q1FjLxlF8AdQ61lxgAQAA&view=BERANDA"
-class="btn"
-target="_blank">
-
-📱 MASUK APLIKASI
-
-</a>
-
-</header>
-<section id="fitur" class="fitur">
-
-<h2>Fitur Unggulan SIGAP RANI</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>📱 QR Absensi</h3>
-<p>Absensi siswa menggunakan QR Code secara cepat, akurat, dan aman.</p>
-</div>
-
-<div class="card">
-<h3>👨‍🎓 Data Siswa</h3>
-<p>Mengelola data peserta didik secara digital dan terintegrasi.</p>
-</div>
-
-<div class="card">
-<h3>📊 Rekap Laporan</h3>
-<p>Laporan kehadiran harian, bulanan, dan tahunan otomatis.</p>
-</div>
-
-</div>
-
-</section>
-    <section id="tentang" class="tentang">
-
-<div class="tentang-kiri">
-
-<h2>Tentang SIGAP RANI</h2>
-
-<p>
-
-SIGAP RANI (Sistem Informasi Gadget Absensi Pelajar SPENSARANI)
-merupakan sistem absensi digital berbasis QR Code yang dikembangkan
-untuk meningkatkan kedisiplinan, efektivitas, dan transparansi
-kehadiran peserta didik di SMP Negeri 1 Rambang Niru.
-
-</p>
-
-<p>
-
-Aplikasi ini dibangun menggunakan Google AppSheet sehingga mampu
-menyajikan data absensi secara realtime, mudah digunakan,
-dan terintegrasi dengan Google Spreadsheet.
-
-</p>
-
-</div>
-
-<div class="tentang-kanan">
-
-<img src="sigaprani.png" class="tentang-logo">
-
-</div>
-
-</section>
-    <section class="statistik">
-
-<div class="item">
-<h2>100%</h2>
-<p>Digital</p>
-</div>
-
-<div class="item">
-<h2>QR</h2>
-<p>Absensi</p>
-</div>
-
-<div class="item">
-<h2>24/7</h2>
-<p>Realtime</p>
-</div>
-
-<div class="item">
-<h2>Cloud</h2>
-<p>Google AppSheet</p>
-</div>
-
-</section>
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
