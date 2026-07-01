@@ -1038,3 +1038,76 @@ transform:scale(1.05);
 
 }
 }
+/*==========================
+DASHBOARD
+==========================*/
+
+.dashboard{
+
+width:90%;
+max-width:1200px;
+
+margin:60px auto;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+}
+
+.dash-card{
+
+background:rgba(255,255,255,.10);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.20);
+
+border-radius:25px;
+
+padding:35px;
+
+text-align:center;
+
+transition:.4s;
+
+box-shadow:0 15px 35px rgba(0,0,0,.30);
+
+}
+
+.dash-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 0 35px rgba(0,200,83,.35);
+
+}
+
+.dash-icon{
+
+font-size:48px;
+
+margin-bottom:15px;
+
+}
+
+.dash-card h2{
+
+font-size:42px;
+
+color:#00C853;
+
+margin-bottom:8px;
+
+font-weight:700;
+
+}
+
+.dash-card p{
+
+font-size:18px;
+
+}
