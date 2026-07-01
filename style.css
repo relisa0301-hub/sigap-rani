@@ -273,30 +273,311 @@ body{
 
 .box{
 
-    background:rgba(255,255,255,.10);
+    background:rgba(255,255,255,.12);
 
-    backdrop-filter:blur(18px);
-
-    border-radius:20px;
-
-    padding:35px;
+    backdrop-filter:blur(20px);
 
     border:1px solid rgba(255,255,255,.18);
 
+    border-radius:25px;
+
+    padding:45px 30px;
+
     transition:.4s;
+
+    text-align:center;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
 
 }
 
 .box:hover{
 
-    transform:translateY(-10px);
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.35),
+    0 0 30px rgba(0,200,83,.25);
 
 }
 
 .icon{
 
-    font-size:55px;
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:42px;
+
+    background:linear-gradient(
+    135deg,
+    #1565C0,
+    #00C853);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+/* =====================================================
+   CLOCK
+===================================================== */
+
+.clock{
+
+    width:min(700px,90%);
+    margin:60px auto;
+    padding:40px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.20);
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.30);
+
+}
+
+.clock h3{
+
+    font-size:28px;
 
     margin-bottom:20px;
+
+}
+
+#jam{
+
+    font-size:58px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    color:#ffffff;
+
+    margin-bottom:10px;
+
+}
+
+#tanggal{
+
+    font-size:18px;
+
+    opacity:.9;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    margin-top:70px;
+
+    background:#07142E;
+
+    border-top:3px solid #00C853;
+
+    padding:40px 20px;
+
+    text-align:center;
+
+}
+
+footer p{
+
+    line-height:2;
+
+    color:white;
+
+    opacity:.9;
+
+}
+
+
+/* =====================================================
+   FLOATING ANIMATION
+===================================================== */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+
+/* =====================================================
+   FADE UP
+===================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero{
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+.card{
+
+    animation:fadeUp 1.6s ease;
+
+}
+
+.box{
+
+    animation:fadeUp 2s ease;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:768px){
+
+.hero{
+
+    padding:20px;
+
+}
+
+.logo{
+
+    width:160px;
+
+}
+
+.hero h1{
+
+    font-size:52px;
+
+}
+
+.subtitle{
+
+    font-size:17px;
+
+}
+
+.card{
+
+    padding:30px;
+
+    margin-top:-40px;
+
+}
+
+.card h2{
+
+    font-size:28px;
+
+}
+
+.card p{
+
+    font-size:16px;
+
+}
+
+.btn{
+
+    width:100%;
+
+}
+
+.info{
+
+    grid-template-columns:1fr;
+
+}
+
+#jam{
+
+    font-size:40px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.hero h1{
+
+    font-size:42px;
+
+}
+
+.logo{
+
+    width:140px;
+
+}
+
+.badge{
+
+    font-size:14px;
+
+}
+
+#jam{
+
+    font-size:32px;
+
+}
 
 }
