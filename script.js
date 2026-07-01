@@ -1,11 +1,16 @@
-// ================================
+// ========================================
 // SIGAP RANI
-// Digital Clock
-// ================================
+// Script
+// ========================================
+
+
+// ======================
+// JAM DIGITAL
+// ======================
 
 function updateClock(){
 
-const now = new Date();
+const now=new Date();
 
 const hari=[
 "Minggu",
@@ -32,21 +37,24 @@ const bulan=[
 "Desember"
 ];
 
-let jam=String(now.getHours()).padStart(2,"0");
-let menit=String(now.getMinutes()).padStart(2,"0");
-let detik=String(now.getSeconds()).padStart(2,"0");
+const jam=String(now.getHours()).padStart(2,"0");
+const menit=String(now.getMinutes()).padStart(2,"0");
+const detik=String(now.getSeconds()).padStart(2,"0");
 
-document.getElementById("jam").innerHTML=
-`${jam} : ${menit} : ${detik}`;
+const elJam=document.getElementById("jam");
 
-const tanggal=
-`${hari[now.getDay()]}, ${now.getDate()} ${bulan[now.getMonth()]} ${now.getFullYear()}`;
+if(elJam){
+
+elJam.innerHTML=`${jam}:${menit}:${detik}`;
+
+}
 
 const elTanggal=document.getElementById("tanggal");
 
 if(elTanggal){
 
-elTanggal.innerHTML=tanggal;
+elTanggal.innerHTML=
+`${hari[now.getDay()]}, ${now.getDate()} ${bulan[now.getMonth()]} ${now.getFullYear()}`;
 
 }
 
@@ -56,4 +64,38 @@ setInterval(updateClock,1000);
 
 updateClock();
 
-console.log("SIGAP RANI aktif");
+
+// ======================
+// LOADING WEBSITE
+// ======================
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document
+.getElementById("loadingScreen")
+.classList.add("hide-loading");
+
+},1200);
+
+});
+
+
+// ======================
+// TOMBOL APPSHEET
+// ======================
+
+const tombol=document.getElementById("openApp");
+
+if(tombol){
+
+tombol.addEventListener("click",function(){
+
+document
+.getElementById("loadingScreen")
+.classList.remove("hide-loading");
+
+});
+
+}
