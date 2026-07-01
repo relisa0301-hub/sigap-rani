@@ -111,3 +111,26 @@ if (tombol) {
     });
 
 }
+// ======================
+// PWA
+// ======================
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", () => {
+
+        navigator.serviceWorker.register("./service-worker.js")
+        .then(() => {
+
+            console.log("SIGAP RANI PWA aktif");
+
+        })
+        .catch(err => {
+
+            console.log(err);
+
+        });
+
+    });
+
+}
