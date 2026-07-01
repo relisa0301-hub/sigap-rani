@@ -6,44 +6,50 @@
 }
 
 body {
-  line-height: 1.6;
   background: #f4f6f9;
 }
 
-/* Header */
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
+  padding: 15px 25px;
   background: #0b2a4a;
   color: white;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
 .logo {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
 }
 
 nav a {
   color: white;
-  margin: 0 10px;
   text-decoration: none;
 }
 
+/* MENU BUTTON */
 #menuBtn {
   display: none;
-  font-size: 20px;
+  font-size: 22px;
   background: none;
-  color: white;
   border: none;
+  color: white;
+  cursor: pointer;
 }
 
-/* Hero */
+/* HERO */
 .hero {
-  height: 80vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,26 +64,26 @@ nav a {
   padding: 10px 20px;
   border: none;
   background: #ffcc00;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
 }
 
-/* Section */
+/* SECTION */
 .section {
   padding: 60px 20px;
   text-align: center;
 }
 
-.section.dark {
+.dark {
   background: #0b2a4a;
   color: white;
 }
 
-/* Card */
+/* CARD */
 .card-container {
   display: flex;
+  gap: 15px;
   justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
   margin-top: 20px;
 }
@@ -87,10 +93,10 @@ nav a {
   padding: 20px;
   width: 200px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   background: #0b2a4a;
   color: white;
@@ -98,10 +104,17 @@ footer {
   padding: 15px;
 }
 
-/* Mobile */
+/* MOBILE FIX */
 @media (max-width: 768px) {
   nav {
     display: none;
+    flex-direction: column;
+    background: #0b2a4a;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
   }
 
   #menuBtn {
