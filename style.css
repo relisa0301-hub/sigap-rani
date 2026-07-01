@@ -204,3 +204,32 @@ transition:.4s;
 .tentang-logo:hover{
 transform:rotate(5deg) scale(1.05);
 }
+.statistik{
+background:linear-gradient(135deg,#0B8F5A,#1976D2);
+padding:80px 30px;
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.item{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+padding:35px;
+width:220px;
+border-radius:20px;
+text-align:center;
+color:white;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.item h2{
+font-size:46px;
+margin-bottom:10px;
+}
+
+.item p{
+font-size:20px;
+color:white;
+}
