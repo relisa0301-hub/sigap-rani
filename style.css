@@ -1,63 +1,302 @@
+/* =====================================================
+   SIGAP RANI
+   Style v2.0
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* =========================
+   ROOT
+========================= */
+
+:root{
+
+    --primary:#1565C0;
+    --secondary:#1E88E5;
+    --green:#00C853;
+    --green2:#43A047;
+    --white:#ffffff;
+    --dark:#07142E;
+
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#0f172a;
-  color:white;
-  text-align:center;
+
+    font-family:'Poppins',sans-serif;
+
+    color:white;
+
+    background:url("img/background.jpeg") center center/cover fixed;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    position:relative;
+
 }
 
-header{
-  padding:40px 20px;
-  background:#111827;
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+    rgba(7,20,46,.65),
+    rgba(7,20,46,.70));
+
+    z-index:-1;
+
 }
 
-header h1{
-  font-size:40px;
-  color:#38bdf8;
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
 }
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+
+    width:180px;
+
+    margin-bottom:20px;
+
+    animation:floating 4s ease-in-out infinite;
+
+    filter:drop-shadow(0 0 20px rgba(255,255,255,.25));
+
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.hero h1{
+
+    font-size:clamp(42px,7vw,80px);
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+}
+
+.sigap{
+
+    color:white;
+
+}
+
+.rani{
+
+    color:var(--green);
+
+}
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle{
+
+    margin-top:15px;
+
+    font-size:20px;
+
+    max-width:700px;
+
+    opacity:.95;
+
+    line-height:1.8;
+
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.badge{
+
+    margin-top:25px;
+
+    background:linear-gradient(90deg,var(--primary),var(--green));
+
+    padding:10px 28px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.30);
+
+}
+
+/* =========================
+   GLASS CARD
+========================= */
 
 .card{
-  margin:30px auto;
-  background:#1f2937;
-  padding:25px;
-  width:80%;
-  max-width:600px;
-  border-radius:15px;
+
+    width:min(900px,90%);
+
+    margin:-80px auto 40px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.20);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.30);
+
 }
 
+.card h2{
+
+    font-size:34px;
+
+    margin-bottom:20px;
+
+}
+
+.card p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    opacity:.95;
+
+}
+
+/* =========================
+   BUTTON
+========================= */
+
 .btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:12px 20px;
-  background:#22c55e;
-  color:white;
-  text-decoration:none;
-  border-radius:10px;
-  font-weight:bold;
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:16px 42px;
+
+    border-radius:60px;
+
+    background:linear-gradient(90deg,var(--primary),var(--green));
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.4s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
 }
 
 .btn:hover{
-  background:#16a34a;
+
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:0 15px 35px rgba(21,101,192,.45);
+
 }
+
+/* =========================
+   INFO
+========================= */
 
 .info{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-  margin:40px 10px;
+
+    width:90%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+    padding-bottom:60px;
+
 }
 
-.info div{
-  background:#1e293b;
-  padding:20px;
-  width:250px;
-  border-radius:12px;
+.box{
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    transition:.4s;
+
 }
 
-footer{
-  margin-top:40px;
-  padding:15px;
-  background:#111827;
-  font-size:14px;
+.box:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.icon{
+
+    font-size:55px;
+
+    margin-bottom:20px;
+
 }
