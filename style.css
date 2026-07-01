@@ -773,6 +773,8 @@ transform:scale(1.05);
 
     opacity:0;
 
+    visibility:hidden;
+
     pointer-events:none;
 
 }
