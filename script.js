@@ -86,16 +86,28 @@ document
 // TOMBOL APPSHEET
 // ======================
 
-const tombol=document.getElementById("openApp");
+// ======================
+// TOMBOL MASUK APPSHEET
+// ======================
 
-if(tombol){
+const tombol = document.getElementById("openApp");
 
-tombol.addEventListener("click",function(){
+if (tombol) {
 
-document
-.getElementById("loadingScreen")
-.classList.remove("hide-loading");
+    tombol.addEventListener("click", function (e) {
 
-});
+        e.preventDefault();
+
+        const loading = document.getElementById("loadingScreen");
+
+        loading.classList.remove("hide-loading");
+
+        setTimeout(() => {
+
+            window.location.href = tombol.href;
+
+        },1000);
+
+    });
 
 }
