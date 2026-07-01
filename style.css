@@ -868,3 +868,118 @@ transform:scale(1.05);
     color:#ffffff;
 
 }
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    padding:15px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(8,18,45,.35);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.10);
+
+    z-index:999;
+
+}
+
+.nav-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.nav-logo img{
+
+    width:45px;
+
+}
+
+.nav-logo span{
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.nav-logo strong{
+
+    color:#00C853;
+
+}
+
+.nav-menu{
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+
+}
+
+.nav-menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-menu a:hover{
+
+    color:#00C853;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.navbar{
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.nav-menu{
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+}
