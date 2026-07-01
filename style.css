@@ -162,3 +162,45 @@ font-size:17px;
 color:#555;
 line-height:1.7;
 }
+.tentang{
+padding:90px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:60px;
+background:white;
+}
+
+.tentang-kiri{
+flex:1;
+min-width:320px;
+}
+
+.tentang-kiri h2{
+font-size:40px;
+color:#0B8F5A;
+margin-bottom:25px;
+}
+
+.tentang-kiri p{
+font-size:18px;
+line-height:1.9;
+color:#555;
+margin-bottom:20px;
+}
+
+.tentang-kanan{
+flex:1;
+text-align:center;
+}
+
+.tentang-logo{
+width:320px;
+max-width:100%;
+transition:.4s;
+}
+
+.tentang-logo:hover{
+transform:rotate(5deg) scale(1.05);
+}
