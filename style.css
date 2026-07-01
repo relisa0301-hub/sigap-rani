@@ -1,235 +1,110 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
-nav{
-position:fixed;
-top:20px;
-left:50%;
-transform:translateX(-50%);
-width:92%;
-max-width:1200px;
-padding:12px 30px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(255,255,255,.12);
-backdrop-filter:blur(15px);
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.18);
-z-index:999;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.brand{
-display:flex;
-align-items:center;
-gap:12px;
-font-size:24px;
-font-weight:bold;
-color:white;
+body {
+  line-height: 1.6;
+  background: #f4f6f9;
 }
 
-.navlogo{
-width:45px;
-height:45px;
-border-radius:50%;
-background:white;
-padding:4px;
-object-fit:contain;
-}
-.menu{
-display:flex;
-gap:35px;
-}
-
-.menu a{
-color:white;
-text-decoration:none;
-font-size:18px;
-font-weight:600;
-transition:.3s;
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #0b2a4a;
+  color: white;
+  position: sticky;
+  top: 0;
 }
 
-.menu a:hover{
-color:#FFD54F;
-}
-body{
-background:#f4f8fb;
+.logo {
+  font-weight: bold;
+  font-size: 20px;
 }
 
-header{
-min-height:100vh;
-background:linear-gradient(135deg,#0B8F5A,#1976D2);
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:140px 20px 40px;
-color:white;
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
 }
 
-.logo{
-width:200px;
-margin-bottom:25px;
-background:white;
-padding:15px;
-border-radius:50%;
-box-shadow:0 15px 35px rgba(0,0,0,.25);
+#menuBtn {
+  display: none;
+  font-size: 20px;
+  background: none;
+  color: white;
+  border: none;
 }
 
-h1{
-font-size:56px;
-font-weight:800;
-letter-spacing:2px;
-margin-bottom:10px;
-}
-h3{
-font-size:24px;
-font-weight:400;
-margin-bottom:25px;
-}
-
-h4{
-font-size:18px;
-letter-spacing:4px;
-opacity:.9;
-margin-bottom:15px;
-}
-p{
-font-size:20px;
-max-width:700px;
-margin-bottom:30px;
+/* Hero */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  color: white;
+  text-align: center;
 }
 
-.btn{
-background:white;
-color:#0B8F5A;
-padding:15px 35px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-font-size:18px;
-transition:.3s;
+.hero button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #ffcc00;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.btn:hover{
-transform:scale(1.05);
-}
-.fitur{
-padding:80px 40px;
-background:#f5f8fc;
-text-align:center;
+/* Section */
+.section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.fitur h2{
-font-size:38px;
-color:#0B8F5A;
-margin-bottom:50px;
+.section.dark {
+  background: #0b2a4a;
+  color: white;
 }
 
-.cards{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
+/* Card */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-.card{
-width:320px;
-background:white;
-padding:35px;
-border-radius:20px;
-box-shadow:0 15px 35px rgba(0,0,0,.12);
-transition:.3s;
+.card {
+  background: white;
+  padding: 20px;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 25px 45px rgba(0,0,0,.20);
+/* Footer */
+footer {
+  background: #0b2a4a;
+  color: white;
+  text-align: center;
+  padding: 15px;
 }
 
-.card h3{
-color:#1976D2;
-margin-bottom:20px;
-font-size:26px;
-}
+/* Mobile */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
 
-.card p{
-font-size:17px;
-color:#555;
-line-height:1.7;
-}
-.tentang{
-padding:90px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-gap:60px;
-background:white;
-}
-
-.tentang-kiri{
-flex:1;
-min-width:320px;
-}
-
-.tentang-kiri h2{
-font-size:40px;
-color:#0B8F5A;
-margin-bottom:25px;
-}
-
-.tentang-kiri p{
-font-size:18px;
-line-height:1.9;
-color:#555;
-margin-bottom:20px;
-}
-
-.tentang-kanan{
-flex:1;
-text-align:center;
-}
-
-.tentang-logo{
-width:320px;
-max-width:100%;
-transition:.4s;
-}
-
-.tentang-logo:hover{
-transform:rotate(5deg) scale(1.05);
-}
-.statistik{
-background:linear-gradient(135deg,#0B8F5A,#1976D2);
-padding:80px 30px;
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-}
-
-.item{
-background:rgba(255,255,255,.15);
-backdrop-filter:blur(10px);
-padding:35px;
-width:220px;
-border-radius:20px;
-text-align:center;
-color:white;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
-}
-
-.item h2{
-font-size:46px;
-margin-bottom:10px;
-}
-
-.item p{
-font-size:20px;
-color:white;
+  #menuBtn {
+    display: block;
+  }
 }
