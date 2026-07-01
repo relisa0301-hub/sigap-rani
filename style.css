@@ -798,3 +798,73 @@ transform:scale(1.05);
     pointer-events:none;
 
 }
+/* ==========================================
+   DASHBOARD STATISTIK
+========================================== */
+
+.stats{
+
+    margin-top:45px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+
+    gap:20px;
+
+}
+
+.stat-box{
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:22px;
+
+    padding:28px 20px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 15px 40px rgba(0,200,83,.25),
+    0 0 20px rgba(30,136,229,.20);
+
+}
+
+.number{
+
+    display:block;
+
+    font-size:38px;
+
+    font-weight:800;
+
+    color:#00C853;
+
+    margin-bottom:8px;
+
+}
+
+.label{
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+}
