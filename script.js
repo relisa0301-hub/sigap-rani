@@ -1,43 +1,54 @@
 const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRDCyyb7vASeWR8gDo_oMJwnfJ_On4wLXs3erVi0Uehsb2ILuC5RJqJ0YbYHjuXUv6yC-8a_xAXrVCB/pub?gid=40560239&single=true&output=csv";
 
-async function loadWebsiteData(){
+async function loadWebsiteData() {
 
-    try{
+    try {
 
-        const res = await fetch(csvUrl + "&t=" + Date.now());
-        const text = await res.text();
+        const response = await fetch(csvUrl + "&t=" + new Date().getTime(), {
+            cache: "no-store"
+        });
 
-        const rows = text.trim().split("\n");
+        const csv = await response.text();
+
+        const rows = csv.replace(/\r/g, "").trim().split("\n");
 
         const data = {};
 
-        rows.forEach(row=>{
+        rows.forEach(row => {
 
-            const col = row.split(",");
+            const cols = row.split(",");
 
-            data[col[0].trim()] = col[1].trim();
+            if (cols.length >= 2) {
+
+                data[cols[0].trim()] = cols.slice(1).join(",").trim();
+
+            }
 
         });
 
-        document.getElementById("guru").innerHTML = data.JumlahGuru;
-        document.getElementById("siswa").innerHTML = data.JumlahSiswa;
-        document.getElementById("kelas").innerHTML = data.JumlahKelas;
-        document.getElementById("hadir").innerHTML = data.HadirHariIni;
+        document.getElementById("guru").textContent = data["JumlahGuru"] || "-";
+        document.getElementById("siswa").textContent = data["JumlahSiswa"] || "-";
+        document.getElementById("kelas").textContent = data["JumlahKelas"] || "-";
+        document.getElementById("hadir").textContent = data["HadirHariIni"] || "-";
 
         document.querySelector("#pengumuman ul").innerHTML = `
-            <li>📌 ${data.Pengumuman1}</li>
-            <li>📌 ${data.Pengumuman2}</li>
-            <li>📌 ${data.Pengumuman3}</li>
+            <li>📌 ${data["Pengumuman1"] || ""}</li>
+            <li>📌 ${data["Pengumuman2"] || ""}</li>
+            <li>📌 ${data["Pengumuman3"] || ""}</li>
         `;
 
-    }catch(e){
+    } catch (err) {
 
-        console.log(e);
+        console.error(err);
 
     }
 
 }
 
-loadWebsiteData();
+document.addEventListener("DOMContentLoaded", () => {
 
-setInterval(loadWebsiteData,30000);
+    loadWebsiteData();
+
+    setInterval(loadWebsiteData, 30000);
+
+});
