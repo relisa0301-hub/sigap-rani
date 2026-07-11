@@ -18,7 +18,7 @@ min-height:100vh;
 background-image:url("img/fotoguru.jpg");
 background-size:cover;
 background-repeat:no-repeat;
-background-position:90% center;
+background-position:60% center;
 display:flex;
 flex-direction:column;
 }
