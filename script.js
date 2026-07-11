@@ -18,10 +18,15 @@ async function loadWebsiteData() {
             }
         });
 
-        document.getElementById("guru").textContent = data["JumlahGuru"] || "-";
-        document.getElementById("siswa").textContent = data["JumlahSiswa"] || "-";
-        document.getElementById("kelas").textContent = data["JumlahKelas"] || "-";
-        document.getElementById("hadir").textContent = data["HadirHariIni"] || "-";
+        const guru = document.getElementById("guru");
+        const siswa = document.getElementById("siswa");
+        const kelas = document.getElementById("kelas");
+        const hadir = document.getElementById("hadir");
+
+        if (guru) guru.textContent = data["JumlahGuru"] || "-";
+        if (siswa) siswa.textContent = data["JumlahSiswa"] || "-";
+        if (kelas) kelas.textContent = data["JumlahKelas"] || "-";
+        if (hadir) hadir.textContent = data["HadirHariIni"] || "-";
 
     } catch (e) {
         console.log(e);
@@ -30,25 +35,21 @@ async function loadWebsiteData() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    loadWebsiteData();
-    setInterval(loadWebsiteData,30000);
-
-    // langsung membuka AppSheet di HP
-    const tombol = document.getElementById("openApp");
-
-    tombol.addEventListener("click",function(){
-
-        window.location.href="https://www.appsheet.com/newshortcut/a0bb851c-dfd7-4280-96a1-ba27da2ea92d";
-
-    });
-    window.addEventListener("load", function () {
-
     const loading = document.getElementById("loadingScreen");
-
     if (loading) {
         loading.style.display = "none";
     }
 
-});
+    loadWebsiteData();
+    setInterval(loadWebsiteData, 30000);
+
+    const tombol = document.getElementById("openApp");
+
+    if (tombol) {
+        tombol.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.location.href = "https://www.appsheet.com/newshortcut/a0bb851c-dfd7-4280-96a1-ba27da2ea92d";
+        });
+    }
 
 });
