@@ -96,3 +96,27 @@ document.querySelector(".btn").addEventListener("click", function (e) {
     }, 500);
 
 });
+// ========================================
+// PWA - SIGAP RANI
+// ========================================
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", () => {
+
+        navigator.serviceWorker
+            .register("./sw.js")
+            .then(() => {
+
+                console.log("SIGAP RANI berhasil diaktifkan sebagai PWA");
+
+            })
+            .catch((error) => {
+
+                console.log("Service Worker gagal:", error);
+
+            });
+
+    });
+
+}
