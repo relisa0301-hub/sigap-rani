@@ -7,30 +7,34 @@
 
 <title>SIGAP RANI</title>
 
+<link rel="stylesheet" href="style.css">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#7A1E2B">
 
-<meta name="theme-color" content="#7A1F2B">
+<link rel="icon" href="img/favicon.ico">
 
 </head>
 
 <body>
 
-<header>
+<header class="hero">
 
-<nav class="navbar">
+<div class="overlay"></div>
 
-<div class="logo-area">
+<nav>
 
-<img src="img/logo.png" alt="SIGAP RANI">
+<div class="logo">
+
+<img src="img/logo.png">
 
 <div>
 
-<h2>SIGAP RANI</h2>
+<h2>SIGAP <span>RANI</span></h2>
 
 <p>Sistem Informasi Gadget Absensi Pelajar</p>
 
@@ -40,35 +44,36 @@
 
 <ul>
 
-<li><a href="#beranda">Beranda</a></li>
+<li><a href="#">Beranda</a></li>
+
 <li><a href="#fitur">Fitur</a></li>
+
 <li><a href="#tentang">Tentang</a></li>
+
 <li><a href="#kontak">Kontak</a></li>
 
 </ul>
 
 </nav>
 
-<section class="hero" id="beranda">
+<section class="hero-content">
 
-<div class="hero-left">
+<div class="left">
 
-<h4>SELAMAT DATANG DI</h4>
+<h5>SELAMAT DATANG DI</h5>
 
-<h1>SIGAP RANI</h1>
+<h1>SIGAP <span>RANI</span></h1>
 
 <h3>Sistem Informasi Gadget Absensi Pelajar SPENSARANI</h3>
 
 <p>
 
-Platform absensi digital berbasis QR Code yang
-terintegrasi dengan Google Spreadsheet dan
-AppSheet untuk mendukung pembelajaran yang
-lebih cepat, akurat, aman, dan modern.
+Platform absensi digital berbasis QR Code yang terintegrasi dengan Google Spreadsheet dan AppSheet untuk mendukung pembelajaran yang lebih cepat, akurat, aman dan modern.
 
 </p>
 
 <a class="btn"
+
 href="https://www.appsheet.com/newshortcut/a0bb851c-dfd7-4280-96a1-ba27da2ea92d">
 
 MASUK APLIKASI
@@ -77,7 +82,7 @@ MASUK APLIKASI
 
 </div>
 
-<div class="hero-right">
+<div class="right">
 
 <img src="img/logo.png">
 
@@ -87,55 +92,51 @@ MASUK APLIKASI
 
 </header>
 
-<section class="statistik">
+<section class="dashboard">
 
-<div class="card">
+<div class="box">
 
 <h2 id="guru">-</h2>
 
-<span>Guru</span>
+<p>Guru</p>
 
 </div>
 
-<div class="card">
+<div class="box">
 
 <h2 id="siswa">-</h2>
 
-<span>Siswa</span>
+<p>Siswa</p>
 
 </div>
 
-<div class="card">
+<div class="box">
 
 <h2 id="kelas">-</h2>
 
-<span>Kelas</span>
+<p>Kelas</p>
 
 </div>
 
-<div class="card">
+<div class="box">
 
 <h2 id="hadir">-</h2>
 
-<span>Hadir Hari Ini</span>
+<p>Hadir Hari Ini</p>
 
 </div>
 
 </section>
 
-<section id="tentang" class="about">
+<section id="tentang" class="content">
 
 <h2>Tentang SIGAP RANI</h2>
 
 <p>
 
-SIGAP RANI merupakan sistem absensi digital
-berbasis QR Code yang dikembangkan untuk
-mendukung transformasi digital di
-SMP Negeri 1 Rambang Niru.
+SIGAP RANI merupakan sistem absensi digital berbasis QR Code yang dikembangkan untuk mendukung transformasi digital di SMP Negeri 1 Rambang Niru.
 
-Data absensi tersimpan secara realtime,
-aman, cepat dan mudah dipantau.
+Data absensi tersimpan secara realtime, aman, cepat dan mudah dipantau.
 
 </p>
 
@@ -145,7 +146,7 @@ aman, cepat dan mudah dipantau.
 
 <h2>Fitur Unggulan</h2>
 
-<div class="fitur-grid">
+<div class="grid">
 
 <div>
 
@@ -187,7 +188,7 @@ aman, cepat dan mudah dipantau.
 
 <h2>Pengumuman</h2>
 
-<ul id="pengumuman">
+<ul id="pengumumanList">
 
 <li>Memuat data...</li>
 
@@ -199,15 +200,12 @@ aman, cepat dan mudah dipantau.
 
 <h2>SMP Negeri 1 Rambang Niru</h2>
 
-<p>
-
-SIGAP RANI © 2026
-
-</p>
+<p>SIGAP RANI © 2026</p>
 
 </footer>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
