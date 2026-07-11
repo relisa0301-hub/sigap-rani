@@ -1,25 +1,21 @@
 {
   "name": "SIGAP RANI",
   "short_name": "SIGAP RANI",
-  "description": "Sistem Informasi Gadget Absensi Pelajar SPENSARANI",
   "start_url": "./",
-  "scope": "./",
   "display": "standalone",
+  "background_color": "#7A1E2B",
+  "theme_color": "#7A1E2B",
   "orientation": "portrait",
-  "background_color": "#1565C0",
-  "theme_color": "#1565C0",
   "icons": [
     {
       "src": "img/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
       "src": "img/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }
