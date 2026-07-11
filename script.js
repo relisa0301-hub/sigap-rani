@@ -41,5 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href="https://www.appsheet.com/newshortcut/a0bb851c-dfd7-4280-96a1-ba27da2ea92d";
 
     });
+    window.addEventListener("load", function () {
+
+    const loading = document.getElementById("loadingScreen");
+
+    if (loading) {
+        loading.style.display = "none";
+    }
+
+});
 
 });
