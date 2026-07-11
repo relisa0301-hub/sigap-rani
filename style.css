@@ -1,3 +1,27 @@
+/* =====================================================
+   SIGAP RANI STYLE V3.0
+   PART 1
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+--primary:#0D47A1;
+--secondary:#1565C0;
+--accent:#1E88E5;
+
+--green:#00C853;
+--green2:#43A047;
+
+--gold:#FFD54F;
+
+--white:#ffffff;
+
+--dark:#07142E;
+
+}
+
 *{
 margin:0;
 padding:0;
@@ -7,471 +31,1109 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#f4f6fb;
-color:#222;
+
+background:#07142E;
+color:white;
 overflow-x:hidden;
+
 }
+
+/* ===========================
+BACKGROUND
+=========================== */
 
 .hero{
+
 position:relative;
+
 min-height:100vh;
-background-image:url("img/fotoguru.jpg");
+
+background:
+
+linear-gradient(
+
+rgba(7,20,46,.55),
+
+rgba(7,20,46,.70)
+
+),
+
+url("img/fotoguru.jpg");
+
 background-size:cover;
+
+background-position:center;
+
 background-repeat:no-repeat;
-background-position:30% center;
+
 display:flex;
+
 flex-direction:column;
+
+overflow:hidden;
+
 }
+
+/* ===========================
+OVERLAY
+=========================== */
 
 .overlay{
+
 position:absolute;
+
 inset:0;
-background:rgba(15,25,45,.65);
+
+backdrop-filter:blur(3px);
+
 }
+
+/* ===========================
+NAVBAR
+=========================== */
 
 nav{
-.hero-content{
-position:relative;
-z-index:2;
-width:100%;
-flex:1;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:60px 8%;
 
-transform:translateY(-150px);
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+z-index:999;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 8%;
+
+background:rgba(7,20,46,.70);
+
+backdrop-filter:blur(15px);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
 }
-background:rgba(122,30,43,.92);
-backdrop-filter:blur(10px);
-}
+
+/* ===========================
+LOGO
+=========================== */
 
 .logo{
+
 display:flex;
+
 align-items:center;
-gap:14px;
+
+gap:15px;
+
 }
 
 .logo img{
-width:60px;
-height:60px;
+
+width:68px;
+
+height:68px;
+
 border-radius:50%;
-background:#fff;
-padding:4px;
+
+background:white;
+
+padding:5px;
+
+animation:floating 4s ease-in-out infinite;
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,.35);
+
 }
 
 .logo h2{
-color:#fff;
-font-size:30px;
-font-weight:700;
+
+font-size:32px;
+
+font-weight:800;
+
+color:white;
+
 }
 
 .logo span{
-color:#ffd54f;
+
+color:var(--green);
+
 }
 
 .logo p{
-color:#f3f3f3;
-font-size:14px;
+
+font-size:13px;
+
+opacity:.95;
+
+margin-top:3px;
+
 }
 
+/* ===========================
+MENU
+=========================== */
+
 nav ul{
+
 display:flex;
-list-style:none;
+
 gap:35px;
+
+list-style:none;
+
 }
 
 nav ul li a{
+
+color:white;
+
 text-decoration:none;
-color:#fff;
+
 font-weight:600;
-transition:.3s;
+
+transition:.35s;
+
 }
 
 nav ul li a:hover{
-color:#ffd54f;
+
+color:var(--gold);
+
 }
 
+/* ===========================
+HERO CONTENT
+=========================== */
+
 .hero-content{
+
 position:relative;
-z-index:2;
-width:100%;
+
+z-index:5;
+
 flex:1;
+
 display:flex;
+
 align-items:center;
+
 justify-content:space-between;
-padding:60px 8%;
+
+gap:80px;
+
+padding:130px 8% 50px;
+
+/* tulisan naik supaya tidak menutupi wajah */
+
+transform:translateY(-70px);
+
 }
 
 .left{
+
 flex:1;
+
 max-width:650px;
-color:#fff;
+
 }
 
 .left h5{
+
 letter-spacing:6px;
+
 font-size:18px;
+
 margin-bottom:18px;
+
+color:#FFD54F;
+
 }
 
 .left h1{
-font-size:78px;
+
+font-size:82px;
+
 font-weight:800;
+
+line-height:1.05;
+
 margin-bottom:15px;
+
 }
 
 .left h1 span{
-color:#00e676;
+
+color:var(--green);
+
 }
 
 .left h3{
+
 font-size:30px;
+
 font-weight:500;
+
 margin-bottom:25px;
+
 }
 
 .left p{
+
 font-size:20px;
+
 line-height:1.8;
+
 margin-bottom:35px;
+
+max-width:600px;
+
 }
 
+/* ===========================
+BUTTON
+=========================== */
+
 .btn{
+
 display:inline-block;
-padding:18px 42px;
-background:#ffd54f;
-color:#6b0017;
-font-size:20px;
+
+padding:18px 45px;
+
+border-radius:60px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+var(--primary),
+
+var(--green)
+
+);
+
+color:white;
+
+font-size:19px;
+
 font-weight:700;
-border-radius:50px;
+
 text-decoration:none;
-box-shadow:0 12px 30px rgba(0,0,0,.3);
-transition:.3s;
+
+transition:.35s;
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.30);
+
 }
 
 .btn:hover{
-transform:translateY(-4px);
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 20px 40px rgba(0,0,0,.45);
+
 }
 
+/* ===========================
+LOGO BESAR KANAN
+=========================== */
+
 .right{
+
 flex:1;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 }
 
 .right img{
-width:300px;
-max-width:80%;
-height:auto;
-display:block;
-background:#fff;
-padding:15px;
+
+width:340px;
+
+max-width:85%;
+
+background:white;
+
+padding:18px;
+
 border-radius:50%;
-box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+box-shadow:
+
+0 20px 45px rgba(0,0,0,.35);
+
+animation:floating 4s ease-in-out infinite;
+
 }
 
+/* ===========================
+ANIMATION
+=========================== */
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+/* =====================================================
+   PART 2
+   DASHBOARD
+===================================================== */
+
 .dashboard{
+
 display:grid;
-grid-template-columns:repeat(4,1fr);
+
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
 gap:25px;
-padding:60px 8%;
-background:#fff;
+
+padding:70px 8%;
+
+background:#f5f8ff;
+
 }
 
 .box{
-background:#7A1E2B;
-color:#fff;
-border-radius:18px;
+
+background:white;
+
+border-radius:25px;
+
 padding:35px;
+
 text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+transition:.4s;
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,.08);
+
+border-top:6px solid var(--primary);
+
+}
+
+.box:hover{
+
+transform:translateY(-12px);
+
+box-shadow:
+
+0 20px 40px rgba(0,0,0,.18);
+
 }
 
 .box h2{
-font-size:46px;
-margin-bottom:10px;
+
+font-size:48px;
+
+color:var(--primary);
+
+margin-bottom:12px;
+
 }
 
 .box p{
+
 font-size:18px;
+
+color:#555;
+
+line-height:1.7;
+
+}
+
+/* ===========================
+CONTENT
+=========================== */
+
+.content{
+
+padding:80px 8%;
+
+background:white;
+
+}
+
+.content h2{
+
+font-size:42px;
+
+color:var(--primary);
+
+margin-bottom:25px;
+
+position:relative;
+
+}
+
+.content h2::after{
+
+content:"";
+
+display:block;
+
+width:80px;
+
+height:5px;
+
+background:var(--green);
+
+margin-top:12px;
+
+border-radius:50px;
+
+}
+
+.content p{
+
+font-size:20px;
+
+line-height:2;
+
+color:#444;
+
+text-align:justify;
+
+}
+
+/* ===========================
+FITUR
+=========================== */
+
+.fitur{
+
+padding:80px 8%;
+
+background:#f7f9fc;
+
+}
+
+.fitur h2{
+
+font-size:42px;
+
+color:var(--primary);
+
+margin-bottom:40px;
+
+text-align:center;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.grid div{
+
+background:white;
+
+padding:35px;
+
+border-radius:25px;
+
+transition:.35s;
+
+box-shadow:
+
+0 12px 30px rgba(0,0,0,.08);
+
+border:1px solid rgba(0,0,0,.05);
+
+}
+
+.grid div:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+
+0 20px 40px rgba(0,0,0,.18);
+
+}
+
+.grid h3{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+color:var(--primary);
+
+}
+
+.grid p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#555;
+
+}
+
+/* ===========================
+PENGUMUMAN
+=========================== */
+
+.pengumuman{
+
+padding:80px 8%;
+
+background:white;
+
+}
+
+.pengumuman h2{
+
+font-size:42px;
+
+color:var(--primary);
+
+margin-bottom:25px;
+
+}
+
+#pengumumanList{
+
+margin-top:20px;
+
+padding-left:25px;
+
+font-size:20px;
+
+line-height:2.1;
+
+color:#444;
+
+}
+
+#pengumumanList li{
+
+margin-bottom:15px;
+
+padding-left:8px;
+
+}
+
+/* ===========================
+CLOCK
+=========================== */
+
+.clock{
+
+padding:70px 20px;
+
+text-align:center;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+var(--primary),
+
+var(--green)
+
+);
+
+color:white;
+
+}
+
+.clock h3{
+
+font-size:34px;
+
+margin-bottom:25px;
+
+}
+
+#jam{
+
+font-size:56px;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+}
+
+#tanggal{
+
+margin-top:15px;
+
+font-size:22px;
+
+opacity:.95;
+
+}
+
+/* ===========================
+FOOTER
+=========================== */
+
+footer{
+
+background:#07142E;
+
+color:white;
+
+padding:50px 20px;
+
+text-align:center;
+
+border-top:5px solid var(--green);
+
+}
+
+footer h2{
+
+font-size:34px;
+
+margin-bottom:10px;
+
+}
+
+footer p{
+
+font-size:18px;
+
+line-height:1.8;
+
+opacity:.95;
+
+}
+
+footer small{
+
+display:block;
+
+margin-top:15px;
+
+opacity:.7;
+
+font-size:15px;
+
+}
+
+/* ===========================
+SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--primary);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#eef2f8;
+
+}
+/* =====================================================
+   SIGAP RANI STYLE V3.0
+   PART 3 - RESPONSIVE & ANIMATION
+===================================================== */
+
+/* ===========================
+ANIMASI MASUK
+=========================== */
+
+.left{
+animation:slideLeft 1s ease;
+}
+
+.right{
+animation:slideRight 1s ease;
+}
+
+.dashboard{
+animation:fadeUp 1.2s ease;
 }
 
 .content,
 .fitur,
 .pengumuman{
-padding:70px 8%;
+animation:fadeUp 1.3s ease;
 }
 
-.content h2,
-.fitur h2,
-.pengumuman h2{
-font-size:40px;
-color:#7A1E2B;
-margin-bottom:25px;
+@keyframes slideLeft{
+
+from{
+opacity:0;
+transform:translateX(-80px);
 }
 
-.content p{
-font-size:20px;
-line-height:1.9;
+to{
+opacity:1;
+transform:translateX(0);
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:25px;
-margin-top:30px;
 }
 
-.grid div{
-background:#fff;
-padding:30px;
-border-radius:18px;
-box-shadow:0 8px 25px rgba(0,0,0,.1);
+@keyframes slideRight{
+
+from{
+opacity:0;
+transform:translateX(80px);
 }
 
-.grid h3{
-font-size:28px;
-color:#7A1E2B;
-margin-bottom:10px;
+to{
+opacity:1;
+transform:translateX(0);
 }
 
-.grid p{
-font-size:18px;
 }
 
-#pengumumanList{
-margin-top:20px;
-padding-left:25px;
-font-size:19px;
-line-height:2;
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(60px);
 }
 
-footer{
-background:#7A1E2B;
-color:#fff;
-text-align:center;
-padding:35px;
+to{
+opacity:1;
+transform:translateY(0);
 }
 
-footer h2{
-margin-bottom:10px;
 }
 
-@media(max-width:900px){
+/* ===========================
+RESPONSIVE TABLET
+=========================== */
 
-nav{
-flex-direction:column;
-gap:15px;
-}
-
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-gap:18px;
-}
+@media (max-width:992px){
 
 .hero-content{
-position:relative;
-z-index:2;
-width:100%;
-min-height:calc(100vh - 90px);
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:60px;
-padding:0 8%;
+
+flex-direction:column-reverse;
+
+justify-content:center;
+
+text-align:center;
+
+padding:140px 30px 60px;
+
+transform:translateY(-40px);
+
 }
-.right img{
-width:230px;
-margin-bottom:30px;
+
+.left{
+
+max-width:100%;
+
 }
 
 .left h1{
-font-size:52px;
+
+font-size:58px;
+
 }
 
 .left h3{
-font-size:24px;
+
+font-size:26px;
+
 }
 
 .left p{
+
 font-size:18px;
-}
-
-.dashboard{
-grid-template-columns:repeat(2,1fr);
-}
-
-.grid{
-grid-template-columns:1fr;
-}
 
 }
 
-@media(max-width:600px){
+.right img{
 
-.dashboard{
-grid-template-columns:1fr;
-}
+width:250px;
 
-.logo h2{
-font-size:24px;
-}
-
-.logo p{
-font-size:12px;
-}
-
-.left h1{
-font-size:44px;
-}
-
-.left h5{
-font-size:15px;
-letter-spacing:3px;
-}
-
-.btn{
-width:100%;
-text-align:center;
-}
-  /* =========================================
-   RESPONSIVE HP
-========================================= */
-
-@media screen and (max-width:768px){
-
-.navbar{
-    padding:12px 20px;
-}
-
-.nav-links{
-    gap:12px;
-    font-size:14px;
-}
-
-.hero{
-    padding-top:120px;
-    padding-bottom:60px;
-}
-
-.hero-content{
-    flex-direction:column-reverse;
-    text-align:center;
-    gap:30px;
-}
-
-.hero-left,
-.hero-right{
-    width:100%;
-}
-
-.hero h1{
-    font-size:54px;
-    line-height:1.1;
-}
-
-.hero p{
-    font-size:18px;
-}
-
-.hero-logo{
-    width:220px;
-}
-
-.btn{
-    width:230px;
-    margin:auto;
-}
-
-.card{
-    width:92%;
-    padding:30px 20px;
-}
-
-.info{
-    grid-template-columns:1fr;
-}
-
-.box{
-    margin-bottom:20px;
-}
-
-.footer{
-    text-align:center;
-}
+margin-bottom:25px;
 
 }
-  /* ==========================================
-   RESPONSIVE HP
-========================================== */
 
-@media screen and (max-width:768px){
+nav{
 
-.hero{
-    min-height:100vh;
-    padding:100px 20px 50px;
-}
+flex-direction:column;
 
-.hero-content{
-    display:flex;
-    flex-direction:column-reverse;
-    align-items:center;
-    text-align:center;
-    gap:30px;
-}
+gap:15px;
 
-.hero-text{
-    width:100%;
-}
-
-.hero-image{
-    width:100%;
-    display:flex;
-    justify-content:center;
-}
-
-.hero-image img{
-    width:220px;
-    max-width:70%;
-}
-
-.hero h1{
-    font-size:54px;
-    line-height:1.1;
-}
-
-.hero p{
-    font-size:18px;
-    line-height:1.7;
-}
-
-.btn{
-    width:100%;
-    max-width:280px;
-    padding:16px 25px;
-    font-size:18px;
 }
 
 nav ul{
-    gap:15px;
-    font-size:14px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:20px;
+
 }
 
-.logo{
-    width:55px;
-}
+.dashboard{
 
-section{
-    padding:60px 20px;
-}
-
-.card{
-    width:100%;
-}
+grid-template-columns:repeat(2,1fr);
 
 }
 
 }
+
+/* ===========================
+RESPONSIVE HP
+=========================== */
+
+@media (max-width:768px){
+
+.hero{
+
+background-position:center top;
+
+}
+
+.hero-content{
+
+padding:120px 25px 60px;
+
+/* tulisan dinaikkan */
+transform:translateY(-90px);
+
+}
+
+.left h5{
+
+font-size:15px;
+
+letter-spacing:3px;
+
+}
+
+.left h1{
+
+font-size:44px;
+
+line-height:1.2;
+
+}
+
+.left h3{
+
+font-size:22px;
+
+}
+
+.left p{
+
+font-size:17px;
+
+line-height:1.8;
+
+}
+
+.btn{
+
+width:100%;
+
+max-width:320px;
+
+padding:18px;
+
+font-size:18px;
+
+}
+
+.right img{
+
+width:190px;
+
+}
+
+.dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.clock h3{
+
+font-size:28px;
+
+}
+
+#jam{
+
+font-size:40px;
+
+}
+
+#tanggal{
+
+font-size:18px;
+
+}
+
+footer h2{
+
+font-size:26px;
+
+}
+
+footer p{
+
+font-size:16px;
+
+}
+
+}
+
+/* ===========================
+HP KECIL
+=========================== */
+
+@media (max-width:480px){
+
+.hero-content{
+
+padding:110px 20px 50px;
+
+/* lebih naik supaya wajah guru terlihat */
+transform:translateY(-110px);
+
+}
+
+.logo img{
+
+width:55px;
+
+height:55px;
+
+}
+
+.logo h2{
+
+font-size:24px;
+
+}
+
+.logo p{
+
+display:none;
+
+}
+
+.left h1{
+
+font-size:36px;
+
+}
+
+.left h3{
+
+font-size:18px;
+
+}
+
+.left p{
+
+font-size:16px;
+
+}
+
+.btn{
+
+font-size:17px;
+
+padding:16px;
+
+}
+
+.right img{
+
+width:170px;
+
+}
+
+}
+
+/* ===========================
+EFEK KACA
+=========================== */
+
+.box,
+.grid div{
+
+backdrop-filter:blur(10px);
+
+transition:.35s;
+
+}
+
+.box:hover,
+.grid div:hover{
+
+transform:translateY(-10px) scale(1.02);
+
+}
+
+/* ===========================
+SELESAI
+=========================== */
