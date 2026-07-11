@@ -219,22 +219,22 @@ HERO CONTENT
 .hero-content{
 
 position:relative;
-
-z-index:5;
+z-index:2;
 
 flex:1;
 
 display:flex;
 
-align-items:center;
-
 justify-content:space-between;
 
-gap:80px;
+align-items:flex-start;
 
-padding:130px 8% 50px;
+padding:170px 8% 60px;
 
-/* tulisan naik supaya tidak menutupi wajah */
+gap:70px;
+
+}
+
 
 transform:translateY(-70px);
 
@@ -242,9 +242,11 @@ transform:translateY(-70px);
 
 .left{
 
-flex:1;
+max-width:600px;
 
-max-width:650px;
+color:white;
+
+margin-top:-40px;
 
 }
 
@@ -356,31 +358,21 @@ LOGO BESAR KANAN
 
 .right{
 
-flex:1;
-
 display:flex;
 
-justify-content:center;
+justify-content:flex-end;
 
-align-items:center;
+align-items:flex-end;
+
+flex:1;
 
 }
 
 .right img{
 
-width:340px;
+width:300px;
 
-max-width:85%;
-
-background:white;
-
-padding:18px;
-
-border-radius:50%;
-
-box-shadow:
-
-0 20px 45px rgba(0,0,0,.35);
+margin-top:120px;
 
 animation:floating 4s ease-in-out infinite;
 
