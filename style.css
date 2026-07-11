@@ -30,12 +30,18 @@ background:rgba(15,25,45,.65);
 }
 
 nav{
+.hero-content{
 position:relative;
 z-index:2;
+width:100%;
+flex:1;
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:18px 8%;
+justify-content:space-between;
+padding:60px 8%;
+
+transform:translateY(-150px);
+}
 background:rgba(122,30,43,.92);
 backdrop-filter:blur(10px);
 }
