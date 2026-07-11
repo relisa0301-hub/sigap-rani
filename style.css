@@ -15,7 +15,10 @@ overflow-x:hidden;
 .hero{
 position:relative;
 min-height:100vh;
-background:url("img/fotoguru.jpg") center center/cover no-repeat;
+background-image:url("img/fotoguru.jpg");
+background-size:cover;
+background-repeat:no-repeat;
+background-position:75% center;
 display:flex;
 flex-direction:column;
 }
