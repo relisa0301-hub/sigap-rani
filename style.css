@@ -10,9 +10,15 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Poppins',sans-serif;
-background:#f4f6fb;
-color:#333;
+color:#fff;
 line-height:1.6;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("img/fotoguru.jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+background-repeat:no-repeat;
 }
 
 a{
@@ -86,13 +92,15 @@ padding-top:90px;
 }
 
 .hero{
+.hero{
 min-height:100vh;
 display:flex;
+flex-direction:column;
+justify-content:center;
 align-items:center;
-justify-content:space-between;
-padding:80px 8%;
-background:linear-gradient(135deg,#7A1F2B,#A52A3A);
-color:#fff;
+text-align:center;
+padding:120px 20px 80px;
+background:transparent;
 }
 
 .hero-left{
