@@ -7,7 +7,7 @@ const urlsToCache = [
   "/sigap-rani/script.js",
   "/sigap-rani/manifest.json",
   "/sigap-rani/img/logo.png",
-  "/sigap-rani/img/background.jpeg"
+  "/sigap-rani/img/fotoguru.jpg"
 ];
 
 self.addEventListener("install", event => {
