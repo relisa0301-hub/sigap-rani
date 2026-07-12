@@ -1,221 +1,134 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SIGAP RANI</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<meta name="theme-color" content="#7A1E2B">
-
-<link rel="icon" href="img/favicon.ico">
-<!-- Progressive Web App -->
-<link rel="manifest" href="manifest.json">
-
-<meta name="theme-color" content="#0D47A1">
-
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-<meta name="apple-mobile-web-app-title" content="SIGAP RANI">
 </head>
+
 
 <body>
 
-<header class="hero">
 
-<div class="overlay"></div>
+<header>
 
-<nav>
+<h1>📚 SIGAP RANI</h1>
 
-<div class="logo">
+<p>Sistem Informasi Gadget Absensi Pelajar SPENSARANI</p>
 
-<img src="img/logo.png">
-
-<div>
-
-<h2>SIGAP <span>RANI</span></h2>
-
-<p>Sistem Informasi Gadget Absensi Pelajar</p>
-
-</div>
-
-</div>
-
-<ul>
-
-<li><a href="#">Beranda</a></li>
-
-<li><a href="#fitur">Fitur</a></li>
-
-<li><a href="#tentang">Tentang</a></li>
-
-<li><a href="#kontak">Kontak</a></li>
-
-</ul>
-
-</nav>
-
-<section class="hero-content">
-
-<div class="left">
-
-<h5>SELAMAT DATANG DI</h5>
-
-<h1>SIGAP <span>RANI</span></h1>
-
-<h3>Sistem Informasi Gadget Absensi Pelajar SPENSARANI</h3>
-
-<p>
-
-Platform absensi digital berbasis QR Code yang terintegrasi dengan Google Spreadsheet dan AppSheet untuk mendukung pembelajaran yang lebih cepat, akurat, aman dan modern.
-
-</p>
-
-<a class="btn"
-
-href="https://www.appsheet.com/newshortcut/a0bb851c-dfd7-4280-96a1-ba27da2ea92d">
-
-MASUK APLIKASI
-
-</a>
-
-</div>
-
-<div class="right">
-
-<img src="img/logo.png">
-
-</div>
-
-</section>
+<p>SMP Negeri 1 Rambang Niru</p>
 
 </header>
 
+
+
 <section class="dashboard">
 
-<div class="box">
 
-<h2 id="guru">-</h2>
+<div class="card">
 
-<p>Guru</p>
+<h3>👨‍🎓 Siswa</h3>
 
-</div>
-
-<div class="box">
-
-<h2 id="siswa">-</h2>
-
-<p>Siswa</p>
+<h1 id="siswa">0</h1>
 
 </div>
 
-<div class="box">
 
-<h2 id="kelas">-</h2>
 
-<p>Kelas</p>
+<div class="card">
+
+<h3>👩‍🏫 Guru</h3>
+
+<h1 id="guru">0</h1>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>🏫 Kelas</h3>
+
+<h1 id="kelas">0</h1>
 
 </div>
 
-<div class="box">
 
-<h2 id="hadir">-</h2>
 
-<p>Hadir Hari Ini</p>
+<div class="card">
+
+<h3>✅ Hadir Hari Ini</h3>
+
+<h1 id="hadir">0</h1>
 
 </div>
+
 
 </section>
 
-<section id="tentang" class="content">
 
-<h2>Tentang SIGAP RANI</h2>
 
-<p>
+<section class="table-box">
 
-SIGAP RANI merupakan sistem absensi digital berbasis QR Code yang dikembangkan untuk mendukung transformasi digital di SMP Negeri 1 Rambang Niru.
 
-Data absensi tersimpan secara realtime, aman, cepat dan mudah dipantau.
+<h2>Absensi Terbaru</h2>
 
-</p>
 
-</section>
+<table>
 
-<section id="fitur" class="fitur">
 
-<h2>Fitur Unggulan</h2>
+<thead>
 
-<div class="grid">
+<tr>
 
-<div>
+<th>Nama</th>
 
-<h3>QR Code</h3>
+<th>Kelas</th>
 
-<p>Absensi hanya beberapa detik.</p>
+<th>Mapel</th>
 
-</div>
+<th>Guru</th>
 
-<div>
+<th>Jam</th>
 
-<h3>Realtime</h3>
+<th>Status</th>
 
-<p>Data langsung tersimpan otomatis.</p>
+</tr>
 
-</div>
+</thead>
 
-<div>
 
-<h3>Dashboard</h3>
+<tbody id="tabelAbsensi">
 
-<p>Monitoring kehadiran setiap saat.</p>
 
-</div>
+</tbody>
 
-<div>
 
-<h3>WhatsApp</h3>
+</table>
 
-<p>Notifikasi otomatis kepada orang tua.</p>
-
-</div>
-
-</div>
 
 </section>
 
-<section class="pengumuman">
 
-<h2>Pengumuman</h2>
 
-<ul id="pengumumanList">
 
-<li>Memuat data...</li>
+<footer>
 
-</ul>
-
-</section>
-
-<footer id="kontak">
-
-<h2>SMP Negeri 1 Rambang Niru</h2>
-
-<p>SIGAP RANI © 2026</p>
+SIGAP RANI © SMP Negeri 1 Rambang Niru
 
 </footer>
 
+
+
 <script src="script.js"></script>
+
 
 </body>
 
