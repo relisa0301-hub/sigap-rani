@@ -1,113 +1,68 @@
-const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRDCyyb7vASeWR8gDo_oMJwnfJ_On4wLXs3erVi0Uehsb2ILuC5RJqJ0YbYHjuXUv6yC-8a_xAXrVCB/pub?gid=40560239&single=true&output=csv";
+const API = 
+"https://script.google.com/macros/s/AKfycbycwVcMO_XT6HWC8cQMyTZIneK84YeFS29E13E_fQ7ogL3bI9uXI3lOZYlt2YVI6boCmg/exec?aksi=dashboard";
 
-async function loadWebsiteData() {
 
-    try {
 
-        const response = await fetch(csvUrl + "&t=" + Date.now(), {
-            cache: "no-store"
-        });
+fetch(API)
 
-        const csv = await response.text();
+.then(response=>response.json())
 
-        const rows = csv.replace(/\r/g, "").trim().split("\n");
+.then(data=>{
 
-        const data = {};
 
-        rows.forEach(row => {
+document.getElementById("siswa").innerHTML=
+data.jumlahSiswa;
 
-            const cols = row.split(",");
 
-            if (cols.length >= 2) {
+document.getElementById("guru").innerHTML=
+data.jumlahGuru;
 
-                data[cols[0].trim()] = cols.slice(1).join(",").trim();
 
-            }
+document.getElementById("kelas").innerHTML=
+data.jumlahKelas;
 
-        });
 
-        document.getElementById("guru").textContent =
-            data["JumlahGuru"] || "-";
+document.getElementById("hadir").innerHTML=
+data.hadirHariIni;
 
-        document.getElementById("siswa").textContent =
-            data["JumlahSiswa"] || "-";
 
-        document.getElementById("kelas").textContent =
-            data["JumlahKelas"] || "-";
 
-        document.getElementById("hadir").textContent =
-            data["HadirHariIni"] || "-";
+let tabel="";
 
-        const list = document.getElementById("pengumumanList");
 
-        list.innerHTML = "";
+data.absensiTerbaru.forEach(a=>{
 
-        [
-            data["Pengumuman1"],
-            data["Pengumuman2"],
-            data["Pengumuman3"]
-        ].forEach(item => {
 
-            if (item && item.trim() !== "") {
+tabel += `
 
-                const li = document.createElement("li");
-                li.textContent = item;
-                list.appendChild(li);
+<tr>
 
-            }
+<td>${a[5]}</td>
 
-        });
+<td>${a[6]}</td>
 
-        if (list.innerHTML === "") {
+<td>${a[8]}</td>
 
-            list.innerHTML = "<li>Tidak ada pengumuman.</li>";
+<td>${a[9]}</td>
 
-        }
+<td>${a[3]}</td>
 
-    } catch (err) {
+<td>${a[10]}</td>
 
-        console.error("Gagal mengambil data:", err);
+</tr>
 
-    }
-
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    loadWebsiteData();
-
-    setInterval(loadWebsiteData, 30000);
+`;
 
 });
 
-document.querySelector(".btn").addEventListener("click", function(e){
 
-    e.preventDefault();
+document.getElementById("tabelAbsensi").innerHTML=tabel;
 
-    window.location.href="login.html";
+
+})
+
+.catch(error=>{
+
+console.log(error);
 
 });
-// ========================================
-// PWA - SIGAP RANI
-// ========================================
-
-if ("serviceWorker" in navigator) {
-
-    window.addEventListener("load", () => {
-
-        navigator.serviceWorker
-            .register("./sw.js")
-            .then(() => {
-
-                console.log("SIGAP RANI berhasil diaktifkan sebagai PWA");
-
-            })
-            .catch((error) => {
-
-                console.log("Service Worker gagal:", error);
-
-            });
-
-    });
-
-}
