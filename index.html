@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-<div id="userGuru">
-
-</div>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SIGAP RANI</title>
@@ -15,202 +10,48 @@
 
 </head>
 
-
 <body>
 
-<div id="loginBox">
-
-
-<h2>🔐 Login Guru</h2>
-
-
-<input id="email"
-placeholder="Email Guru">
-
-
-<input id="password"
-type="password"
-placeholder="Password">
-
-
-<button onclick="loginGuru()">
-
-Masuk
-
-</button>
-
-
-</div>
-<header>
-
+<div class="container">
 
 <img src="logo.png" class="logo">
-
 
 <h1>SIGAP RANI</h1>
 
 <p>Sistem Informasi Gadget Absensi Pelajar SPENSARANI</p>
 
-<p>SMP Negeri 1 Rambang Niru</p>
-
-
-</header>
-
-
-
-<nav>
-
-<a onclick="beranda()">Beranda</a>
-<a onclick="mulaiScan()">📷 Scan QR</a>
-<a onclick="tampilSiswa()">Data Siswa</a>
-
-<a onclick="tampilGuru()">Data Guru</a>
-
-<a onclick="tampilKelas()">Data Kelas</a>
-
-<a onclick="tampilAbsensi()">Absensi</a>
-
-<a onclick="rekap()">Rekap</a>
-<a onclick="logout()">Logout</a>
-</nav>
-
-
-<section id="scannerBox" class="table-box">
-
-<h2>📷 Scan QR Siswa</h2>
-
-<div id="reader"></div>
-
-<p id="hasilScan"></p>
-
-</section>
-
-
-<section class="dashboard">
-<section id="konten" class="table-box">
-
-</section>
 
 <div class="card">
 
-<div class="icon">👨‍🎓</div>
+<h2>Login Guru</h2>
 
-<h3>Siswa</h3>
+<input 
+id="email"
+type="email"
+placeholder="Email Guru">
 
-<h1 id="siswa">0</h1>
+
+<input 
+id="password"
+type="password"
+placeholder="Password">
+
+
+<button onclick="login()">
+MASUK
+</button>
+
+
+<p id="pesan"></p>
+
 
 </div>
 
 
-
-<div class="card">
-
-<div class="icon">👩‍🏫</div>
-
-<h3>Guru</h3>
-
-<h1 id="guru">0</h1>
-
 </div>
 
 
-
-<div class="card">
-
-<div class="icon">🏫</div>
-
-<h3>Kelas</h3>
-
-<h1 id="kelas">0</h1>
-
-</div>
-
-
-
-<div class="card">
-
-<div class="icon">✅</div>
-
-<h3>Hadir Hari Ini</h3>
-
-<h1 id="hadir">0</h1>
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-<section class="table-box">
-
-
-<h2>📋 Absensi Terbaru</h2>
-
-
-<table>
-
-
-<thead>
-
-<tr>
-
-<th>Nama</th>
-
-<th>Kelas</th>
-
-<th>Mapel</th>
-
-<th>Guru</th>
-
-<th>Jam</th>
-
-<th>Status</th>
-
-</tr>
-
-</thead>
-
-
-<tbody id="tabelAbsensi">
-
-
-</tbody>
-
-
-</table>
-
-
-
-</section>
-
-
-
-
-
-<footer>
-
-
-SIGAP RANI © 2026
-
-<br>
-
-SMP Negeri 1 Rambang Niru
-
-
-</footer>
-
-
-
-
-<script src="https://unpkg.com/html5-qrcode"></script>
-
-<script src="script.js"></script>
-
+<script type="module" src="script.js"></script>
 
 </body>
-
 </html>
