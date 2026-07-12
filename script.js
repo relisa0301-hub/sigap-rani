@@ -532,6 +532,96 @@ x.style.display="none";
 
 
 }
+function mulaiScan(){
 
+
+const scanner =
+new Html5QrcodeScanner(
+
+"reader",
+
+{
+
+fps:10,
+
+qrbox:250
+
+}
+
+);
+
+
+
+scanner.render(
+
+function(qrCodeMessage){
+
+
+scanner.clear();
+
+
+
+prosesAbsensi(qrCodeMessage);
+
+
+
+},
+
+
+function(error){
+
+console.log(error);
+
+}
+
+
+);
+
+
+}
+  function prosesAbsensi(qr){
+
+
+let guru =
+JSON.parse(localStorage.getItem("guru"));
+
+
+
+fetch(API_BASE,{
+
+method:"POST",
+
+body:JSON.stringify({
+
+aksi:"absen",
+
+qr:qr,
+
+guru:guru.email
+
+})
+
+})
+
+
+.then(res=>res.json())
+
+
+.then(data=>{
+
+
+document.getElementById("hasilScan")
+.innerHTML=data.pesan;
+
+
+
+alert(data.pesan);
+
+
+
+});
+
+
+}
 
 }
