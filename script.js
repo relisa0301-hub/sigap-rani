@@ -510,3 +510,28 @@ alert(data.pesan);
 
 
 }
+function logout(){
+
+localStorage.removeItem("guru");
+
+location.reload();
+
+}
+if(guruLogin){
+
+
+if(guruLogin.level=="GURU"){
+
+
+document.querySelectorAll(".admin")
+.forEach(x=>{
+
+x.style.display="none";
+
+});
+
+
+}
+
+
+}
