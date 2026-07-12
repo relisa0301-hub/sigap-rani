@@ -429,3 +429,20 @@ document.getElementById("konten")
 
 
 }
+function loginGuru(){
+
+
+let email=
+document.getElementById("email").value;
+
+
+let password=
+document.getElementById("password").value;
+
+
+
+fetch(API_BASE+
+"&aksi=login"
+)
+
+}
