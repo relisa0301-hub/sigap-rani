@@ -62,7 +62,7 @@ url("img/fotoguru.jpg");
 
 background-size:cover;
 
-background-position:center;
+background-position:85% center;
 
 background-repeat:no-repeat;
 
@@ -232,13 +232,11 @@ align-items:flex-start;
 padding:170px 8% 60px;
 
 gap:70px;
-
-}
-
-
+   
 transform:translateY(-70px);
-
+   
 }
+
 
 .left{
 
