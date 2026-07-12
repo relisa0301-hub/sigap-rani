@@ -1,1129 +1,125 @@
-/* =====================================================
-   SIGAP RANI STYLE V3.0
-   PART 1
-   ===================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-:root{
-
---primary:#0D47A1;
---secondary:#1565C0;
---accent:#1E88E5;
-
---green:#00C853;
---green2:#43A047;
-
---gold:#FFD54F;
-
---white:#ffffff;
-
---dark:#07142E;
-
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
-
 body{
 
-background:#07142E;
-color:white;
-overflow-x:hidden;
+font-family:Arial,sans-serif;
+
+margin:0;
+
+background:#f5f5f5;
 
 }
 
-/* ===========================
-BACKGROUND
-=========================== */
 
-.hero{
+header{
 
-position:relative;
-
-min-height:100vh;
-
-background:
-
-linear-gradient(
-
-rgba(7,20,46,.55),
-
-rgba(7,20,46,.70)
-
-),
-
-url("img/fotoguru.jpg");
-
-background-size:cover;
-
-background-position:25% center;
-
-background-repeat:no-repeat;
-
-display:flex;
-
-flex-direction:column;
-
-overflow:hidden;
-
-}
-
-/* ===========================
-OVERLAY
-=========================== */
-
-.overlay{
-
-position:absolute;
-
-inset:0;
-
-backdrop-filter:blur(3px);
-
-}
-
-/* ===========================
-NAVBAR
-=========================== */
-
-nav{
-
-position:fixed;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-z-index:999;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:18px 8%;
-
-background:rgba(7,20,46,.70);
-
-backdrop-filter:blur(15px);
-
-border-bottom:1px solid rgba(255,255,255,.08);
-
-}
-
-/* ===========================
-LOGO
-=========================== */
-
-.logo{
-
-display:flex;
-
-align-items:center;
-
-gap:15px;
-
-}
-
-.logo img{
-
-width:68px;
-
-height:68px;
-
-border-radius:50%;
-
-background:white;
-
-padding:5px;
-
-animation:floating 4s ease-in-out infinite;
-
-box-shadow:
-
-0 10px 30px rgba(0,0,0,.35);
-
-}
-
-.logo h2{
-
-font-size:32px;
-
-font-weight:800;
+background:#800000;
 
 color:white;
 
-}
+text-align:center;
 
-.logo span{
-
-color:var(--green);
+padding:25px;
 
 }
 
-.logo p{
-
-font-size:13px;
-
-opacity:.95;
-
-margin-top:3px;
-
-}
-
-/* ===========================
-MENU
-=========================== */
-
-nav ul{
-
-display:flex;
-
-gap:35px;
-
-list-style:none;
-
-}
-
-nav ul li a{
-
-color:white;
-
-text-decoration:none;
-
-font-weight:600;
-
-transition:.35s;
-
-}
-
-nav ul li a:hover{
-
-color:var(--gold);
-
-}
-
-/* ===========================
-HERO CONTENT
-=========================== */
-
-.hero-content{
-
-position:relative;
-z-index:2;
-
-flex:1;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:flex-start;
-
-padding:170px 8% 60px;
-
-gap:70px;
-   
-transform:translateY(-70px);
-   
-}
-
-
-.left{
-
-max-width:600px;
-
-color:white;
-
-margin-top:-40px;
-
-}
-
-.left h5{
-
-letter-spacing:6px;
-
-font-size:18px;
-
-margin-bottom:18px;
-
-color:#FFD54F;
-
-}
-
-.left h1{
-
-font-size:82px;
-
-font-weight:800;
-
-line-height:1.05;
-
-margin-bottom:15px;
-
-}
-
-.left h1 span{
-
-color:var(--green);
-
-}
-
-.left h3{
-
-font-size:30px;
-
-font-weight:500;
-
-margin-bottom:25px;
-
-}
-
-.left p{
-
-font-size:20px;
-
-line-height:1.8;
-
-margin-bottom:35px;
-
-max-width:600px;
-
-}
-
-/* ===========================
-BUTTON
-=========================== */
-
-.btn{
-
-display:inline-block;
-
-padding:18px 45px;
-
-border-radius:60px;
-
-background:
-
-linear-gradient(
-
-90deg,
-
-var(--primary),
-
-var(--green)
-
-);
-
-color:white;
-
-font-size:19px;
-
-font-weight:700;
-
-text-decoration:none;
-
-transition:.35s;
-
-box-shadow:
-
-0 15px 35px rgba(0,0,0,.30);
-
-}
-
-.btn:hover{
-
-transform:translateY(-6px);
-
-box-shadow:
-
-0 20px 40px rgba(0,0,0,.45);
-
-}
-
-/* ===========================
-LOGO BESAR KANAN
-=========================== */
-
-.right{
-
-display:flex;
-
-justify-content:flex-end;
-
-align-items:flex-end;
-
-flex:1;
-
-}
-
-.right img{
-
-width:300px;
-
-margin-top:120px;
-
-animation:floating 4s ease-in-out infinite;
-
-}
-
-/* ===========================
-ANIMATION
-=========================== */
-
-@keyframes floating{
-
-0%{
-
-transform:translateY(0px);
-
-}
-
-50%{
-
-transform:translateY(-12px);
-
-}
-
-100%{
-
-transform:translateY(0px);
-
-}
-
-}
-/* =====================================================
-   PART 2
-   DASHBOARD
-===================================================== */
 
 .dashboard{
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-
-gap:25px;
-
-padding:70px 8%;
-
-background:#f5f8ff;
-
-}
-
-.box{
-
-background:white;
-
-border-radius:25px;
-
-padding:35px;
-
-text-align:center;
-
-transition:.4s;
-
-box-shadow:
-
-0 10px 30px rgba(0,0,0,.08);
-
-border-top:6px solid var(--primary);
-
-}
-
-.box:hover{
-
-transform:translateY(-12px);
-
-box-shadow:
-
-0 20px 40px rgba(0,0,0,.18);
-
-}
-
-.box h2{
-
-font-size:48px;
-
-color:var(--primary);
-
-margin-bottom:12px;
-
-}
-
-.box p{
-
-font-size:18px;
-
-color:#555;
-
-line-height:1.7;
-
-}
-
-/* ===========================
-CONTENT
-=========================== */
-
-.content{
-
-padding:80px 8%;
-
-background:white;
-
-}
-
-.content h2{
-
-font-size:42px;
-
-color:var(--primary);
-
-margin-bottom:25px;
-
-position:relative;
-
-}
-
-.content h2::after{
-
-content:"";
-
-display:block;
-
-width:80px;
-
-height:5px;
-
-background:var(--green);
-
-margin-top:12px;
-
-border-radius:50px;
-
-}
-
-.content p{
-
-font-size:20px;
-
-line-height:2;
-
-color:#444;
-
-text-align:justify;
-
-}
-
-/* ===========================
-FITUR
-=========================== */
-
-.fitur{
-
-padding:80px 8%;
-
-background:#f7f9fc;
-
-}
-
-.fitur h2{
-
-font-size:42px;
-
-color:var(--primary);
-
-margin-bottom:40px;
-
-text-align:center;
-
-}
-
-.grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-gap:30px;
-
-}
-
-.grid div{
-
-background:white;
-
-padding:35px;
-
-border-radius:25px;
-
-transition:.35s;
-
-box-shadow:
-
-0 12px 30px rgba(0,0,0,.08);
-
-border:1px solid rgba(0,0,0,.05);
-
-}
-
-.grid div:hover{
-
-transform:translateY(-10px);
-
-box-shadow:
-
-0 20px 40px rgba(0,0,0,.18);
-
-}
-
-.grid h3{
-
-font-size:28px;
-
-margin-bottom:15px;
-
-color:var(--primary);
-
-}
-
-.grid p{
-
-font-size:18px;
-
-line-height:1.8;
-
-color:#555;
-
-}
-
-/* ===========================
-PENGUMUMAN
-=========================== */
-
-.pengumuman{
-
-padding:80px 8%;
-
-background:white;
-
-}
-
-.pengumuman h2{
-
-font-size:42px;
-
-color:var(--primary);
-
-margin-bottom:25px;
-
-}
-
-#pengumumanList{
-
-margin-top:20px;
-
-padding-left:25px;
-
-font-size:20px;
-
-line-height:2.1;
-
-color:#444;
-
-}
-
-#pengumumanList li{
-
-margin-bottom:15px;
-
-padding-left:8px;
-
-}
-
-/* ===========================
-CLOCK
-=========================== */
-
-.clock{
-
-padding:70px 20px;
-
-text-align:center;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-var(--primary),
-
-var(--green)
-
-);
-
-color:white;
-
-}
-
-.clock h3{
-
-font-size:34px;
-
-margin-bottom:25px;
-
-}
-
-#jam{
-
-font-size:56px;
-
-font-weight:700;
-
-letter-spacing:3px;
-
-}
-
-#tanggal{
-
-margin-top:15px;
-
-font-size:22px;
-
-opacity:.95;
-
-}
-
-/* ===========================
-FOOTER
-=========================== */
-
-footer{
-
-background:#07142E;
-
-color:white;
-
-padding:50px 20px;
-
-text-align:center;
-
-border-top:5px solid var(--green);
-
-}
-
-footer h2{
-
-font-size:34px;
-
-margin-bottom:10px;
-
-}
-
-footer p{
-
-font-size:18px;
-
-line-height:1.8;
-
-opacity:.95;
-
-}
-
-footer small{
-
-display:block;
-
-margin-top:15px;
-
-opacity:.7;
-
-font-size:15px;
-
-}
-
-/* ===========================
-SCROLLBAR
-=========================== */
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:var(--primary);
-
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#eef2f8;
-
-}
-/* =====================================================
-   SIGAP RANI STYLE V3.0
-   PART 3 - RESPONSIVE & ANIMATION
-===================================================== */
-
-/* ===========================
-ANIMASI MASUK
-=========================== */
-
-.left{
-animation:slideLeft 1s ease;
-}
-
-.right{
-animation:slideRight 1s ease;
-}
-
-.dashboard{
-animation:fadeUp 1.2s ease;
-}
-
-.content,
-.fitur,
-.pengumuman{
-animation:fadeUp 1.3s ease;
-}
-
-@keyframes slideLeft{
-
-from{
-opacity:0;
-transform:translateX(-80px);
-}
-
-to{
-opacity:1;
-transform:translateX(0);
-}
-
-}
-
-@keyframes slideRight{
-
-from{
-opacity:0;
-transform:translateX(80px);
-}
-
-to{
-opacity:1;
-transform:translateX(0);
-}
-
-}
-
-@keyframes fadeUp{
-
-from{
-opacity:0;
-transform:translateY(60px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-/* ===========================
-RESPONSIVE TABLET
-=========================== */
-
-@media (max-width:992px){
-
-.hero-content{
-
-flex-direction:column-reverse;
-
-justify-content:center;
-
-text-align:center;
-
-padding:140px 30px 60px;
-
-transform:translateY(-40px);
-
-}
-
-.left{
-
-max-width:100%;
-
-}
-
-.left h1{
-
-font-size:58px;
-
-}
-
-.left h3{
-
-font-size:26px;
-
-}
-
-.left p{
-
-font-size:18px;
-
-}
-
-.right img{
-
-width:250px;
-
-margin-bottom:25px;
-
-}
-
-nav{
-
-flex-direction:column;
-
-gap:15px;
-
-}
-
-nav ul{
-
-flex-wrap:wrap;
-
-justify-content:center;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 
 gap:20px;
 
-}
-
-.dashboard{
-
-grid-template-columns:repeat(2,1fr);
+padding:25px;
 
 }
 
-}
 
-/* ===========================
-RESPONSIVE HP
-=========================== */
 
-@media (max-width:768px){
+.card{
 
-.hero{
+background:white;
 
-background-position:center top;
+border-radius:15px;
 
-}
+padding:20px;
 
-.hero-content{
+text-align:center;
 
-padding:120px 25px 60px;
-
-/* tulisan dinaikkan */
-transform:translateY(-90px);
+box-shadow:0 5px 15px #ccc;
 
 }
 
-.left h5{
 
-font-size:15px;
 
-letter-spacing:3px;
-
-}
-
-.left h1{
-
-font-size:44px;
-
-line-height:1.2;
-
-}
-
-.left h3{
-
-font-size:22px;
-
-}
-
-.left p{
-
-font-size:17px;
-
-line-height:1.8;
-
-}
-
-.btn{
-
-width:100%;
-
-max-width:320px;
-
-padding:18px;
-
-font-size:18px;
-
-}
-
-.right img{
-
-width:190px;
-
-}
-
-.dashboard{
-
-grid-template-columns:1fr;
-
-}
-
-.grid{
-
-grid-template-columns:1fr;
-
-}
-
-.clock h3{
-
-font-size:28px;
-
-}
-
-#jam{
+.card h1{
 
 font-size:40px;
 
-}
-
-#tanggal{
-
-font-size:18px;
+color:#800000;
 
 }
 
-footer h2{
 
-font-size:26px;
 
-}
+.table-box{
 
-footer p{
+background:white;
 
-font-size:16px;
+margin:20px;
 
-}
+padding:20px;
 
-}
+border-radius:15px;
 
-/* ===========================
-HP KECIL
-=========================== */
-
-@media (max-width:480px){
-
-.hero-content{
-
-padding:110px 20px 50px;
-
-/* lebih naik supaya wajah guru terlihat */
-transform:translateY(-110px);
+overflow:auto;
 
 }
 
-.logo img{
 
-width:55px;
 
-height:55px;
+table{
 
-}
+width:100%;
 
-.logo h2{
-
-font-size:24px;
+border-collapse:collapse;
 
 }
 
-.logo p{
 
-display:none;
 
-}
+th{
 
-.left h1{
+background:#800000;
 
-font-size:36px;
+color:white;
 
-}
-
-.left h3{
-
-font-size:18px;
+padding:12px;
 
 }
 
-.left p{
 
-font-size:16px;
 
-}
+td{
 
-.btn{
+padding:10px;
 
-font-size:17px;
+border-bottom:1px solid #ddd;
 
-padding:16px;
+text-align:center;
 
 }
 
-.right img{
 
-width:170px;
 
-}
+footer{
 
-}
+background:#800000;
 
-/* ===========================
-EFEK KACA
-=========================== */
+color:white;
 
-.box,
-.grid div{
+text-align:center;
 
-backdrop-filter:blur(10px);
-
-transition:.35s;
+padding:15px;
 
 }
-
-.box:hover,
-.grid div:hover{
-
-transform:translateY(-10px) scale(1.02);
-
-}
-
-/* ===========================
-SELESAI
-=========================== */
