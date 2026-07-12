@@ -1,7 +1,19 @@
 const API_BASE =
 "https://script.google.com/macros/s/AKfycbycwVcMO_XT6HWC8cQMyTZIneK84YeFS29E13E_fQ7ogL3bI9uXI3lOZYlt2YVI6boCmg/exec";
 
+let guruLogin =
+JSON.parse(localStorage.getItem("guru"));
+if(guruLogin){
 
+document.getElementById("userGuru")
+.innerHTML=
+
+"Login : "+
+guruLogin.nama+
+" | "+
+guruLogin.mapel;
+
+}
 function tampilSiswa(){
 
 fetch(API_BASE+"?aksi=siswa")
@@ -441,8 +453,60 @@ document.getElementById("password").value;
 
 
 
-fetch(API_BASE+
-"&aksi=login"
-)
+fetch(API_BASE,{
+
+method:"POST",
+
+body:JSON.stringify({
+
+aksi:"login",
+
+email:email,
+
+password:password
+
+})
+
+})
+
+
+.then(res=>res.json())
+
+
+.then(data=>{
+
+
+if(data.status){
+
+
+localStorage.setItem(
+"guru",
+JSON.stringify(data)
+);
+
+
+
+alert(
+"Selamat datang "+data.nama
+);
+
+
+
+location.reload();
+
+
+
+}else{
+
+
+alert(data.pesan);
+
+
+}
+
+
+
+});
+
 
 }
