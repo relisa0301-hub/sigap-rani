@@ -61,7 +61,7 @@ Masuk
 <nav>
 
 <a onclick="beranda()">Beranda</a>
-
+<a onclick="mulaiScan()">📷 Scan QR</a>
 <a onclick="tampilSiswa()">Data Siswa</a>
 
 <a onclick="tampilGuru()">Data Guru</a>
@@ -75,7 +75,15 @@ Masuk
 </nav>
 
 
+<section id="scannerBox" class="table-box">
 
+<h2>📷 Scan QR Siswa</h2>
+
+<div id="reader"></div>
+
+<p id="hasilScan"></p>
+
+</section>
 
 
 <section class="dashboard">
@@ -197,6 +205,8 @@ SMP Negeri 1 Rambang Niru
 
 
 
+
+<script src="https://unpkg.com/html5-qrcode"></script>
 
 <script src="script.js"></script>
 
