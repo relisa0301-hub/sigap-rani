@@ -80,20 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-document.querySelector(".btn").addEventListener("click", function (e) {
+document.querySelector(".btn").addEventListener("click", function(e){
 
     e.preventDefault();
 
-    const app =
-        "https://www.appsheet.com/newshortcut/a0bb851c-dfd7-4280-96a1-ba27da2ea92d";
-
-    window.location.href = app;
-
-    setTimeout(function () {
-
-        window.open(app, "_blank");
-
-    }, 500);
+    window.location.href="login.html";
 
 });
 // ========================================
