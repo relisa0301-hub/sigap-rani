@@ -301,5 +301,108 @@ width:90px;
 width:45px;
 
 }
+   /* LOGIN */
+
+.login{
+
+max-width:400px;
+
+margin:50px auto;
+
+background:white;
+
+padding:30px;
+
+border-radius:15px;
+
+box-shadow:0 5px 20px rgba(0,0,0,.2);
+
+text-align:center;
+
+}
+
+.login input{
+
+width:100%;
+
+padding:15px;
+
+margin:10px 0;
+
+font-size:16px;
+
+border-radius:8px;
+
+border:1px solid #ccc;
+
+}
+
+.login button{
+
+width:100%;
+
+padding:15px;
+
+background:#800000;
+
+color:white;
+
+border:none;
+
+border-radius:8px;
+
+font-size:18px;
+
+cursor:pointer;
+
+margin-top:10px;
+
+}
+
+header{
+
+background:#800000;
+
+color:white;
+
+padding:20px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.menu{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:20px;
+
+padding:20px;
+
+}
+
+.menu button{
+
+padding:25px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+background:white;
+
+box-shadow:0 3px 10px rgba(0,0,0,.15);
+
+}
 
 }
