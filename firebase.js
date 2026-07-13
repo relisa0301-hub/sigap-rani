@@ -1,8 +1,3 @@
-// ======================================
-// SIGAP RANI V2
-// FIREBASE.JS
-// ======================================
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
@@ -11,7 +6,7 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyDLHdalkrTj_VMI7TPf2its4eE-89HodTY",
+  apiKey: "AIzaSyDlHdalkrTj_VMI7TPf2its4eE-89HodTY",
 
   authDomain: "sigap-rani.firebaseapp.com",
 
