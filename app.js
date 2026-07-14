@@ -3,7 +3,12 @@
 // APP.JS
 // =====================================
 
-import { auth } from "./firebase.js";
+import { auth, db } from "./firebase.js";
+import {
+collection,
+getDocs
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
 
 import {
 onAuthStateChanged,
@@ -177,7 +182,11 @@ document
 signOut(auth);
 
 };
+document
+.getElementById("kelas")
+.onclick=tampilKelas;
 
+  
 }
 
 // ================================
@@ -193,6 +202,69 @@ dashboard(user);
 }else{
 
 tampilLogin();
+
+}
+  // ================================
+// DATA KELAS
+// ================================
+
+async function tampilKelas(){
+
+const snap=await getDocs(collection(db,"kelas"));
+
+let html=`
+
+<header>
+
+<h2>DATA KELAS</h2>
+
+<button id="kembali">
+
+Kembali
+
+</button>
+
+</header>
+
+<div style="padding:20px;">
+
+`;
+
+snap.forEach((doc)=>{
+
+const d=doc.data();
+
+html+=`
+
+<div style="background:white;
+padding:15px;
+margin-bottom:15px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,.15);">
+
+<h3>Kelas ${d.nama}</h3>
+
+<p>Tingkat : ${d.tingkat}</p>
+
+<p>Wali Kelas : ${d.wali}</p>
+
+</div>
+
+`;
+
+});
+
+html+="</div>";
+
+app.innerHTML=html;
+
+document
+.getElementById("kembali")
+.onclick=()=>{
+
+dashboard(auth.currentUser);
+
+};
 
 }
 
