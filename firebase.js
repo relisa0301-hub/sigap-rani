@@ -3,23 +3,23 @@
 // FIREBASE.JS
 // ======================================
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js";
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyDlHdalkrTj_VMI7TPf2its4eE-89HodTY",
+  apiKey: "AIzaSyArUfnMmyX6JGMt5UxpidPFsjwtefkjvtc",
 
-  authDomain: "sigap-rani.firebaseapp.com",
+  authDomain: "sigap-rani-e8d1b.firebaseapp.com",
 
-  projectId: "sigap-rani",
+  projectId: "sigap-rani-e8d1b",
 
-  storageBucket: "sigap-rani.firebasestorage.app",
+  storageBucket: "sigap-rani-e8d1b.firebasestorage.app",
 
-  messagingSenderId: "25822414711",
+  messagingSenderId: "628882873978",
 
-  appId: "1:25822414711:web:d564982c21fad3bc310372"
+  appId: "1:628882873978:web:18b27025c33616998d25c3"
 
 };
 
