@@ -1,320 +1,196 @@
 // =====================================
-// SIGAP RANI V2
-// APP.JS
+// SIGAP RANI V3
+// app.js
 // BAGIAN 1
 // =====================================
 
-import { auth, db } from "./firebase.js";
-
-import {
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
-
-import {
-  collection,
-  getDocs
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+import { cekLogin, login } from "./js/auth.js";
+import { tampilDashboard } from "./js/dashboard.js";
 
 const app = document.getElementById("app");
 
-// ================================
-// LOGIN
-// ================================
+// ===============================
+// HALAMAN LOGIN
+// ===============================
 
 function tampilLogin() {
 
-  app.innerHTML = `
-  <div class="login">
+app.innerHTML = `
 
-      <img src="logo.png" class="logo">
+<div class="login">
 
-      <h1>SIGAP RANI</h1>
+<img src="assets/logo.png" class="logo">
 
-      <p>Sistem Informasi Gadget Absensi Pelajar</p>
+<h1>SIGAP RANI</h1>
 
-      <input
-        id="email"
-        type="email"
-        placeholder="Email Guru">
+<p>Sistem Informasi Gadget Absensi Pelajar</p>
 
-      <input
-        id="password"
-        type="password"
-        placeholder="Password">
+<input
+id="email"
+type="email"
+placeholder="Email Guru">
 
-      <button id="btnLogin">
+<input
+id="password"
+type="password"
+placeholder="Password">
 
-        MASUK
+<button id="btnLogin">
 
-      </button>
+MASUK
 
-      <div id="info"></div>
+</button>
 
-  </div>
-  `;
+<div id="info"></div>
 
-  document
-    .getElementById("btnLogin")
-    .onclick = login;
+</div>
+
+`;
+
+document
+.getElementById("btnLogin")
+.onclick = prosesLogin;
+
+}
+
+// ===============================
+// LOGIN
+// ===============================
+
+async function prosesLogin(){
+
+const email =
+document.getElementById("email").value.trim();
+
+const password =
+document.getElementById("password").value;
+
+const info =
+document.getElementById("info");
+
+if(email==""){
+
+info.innerHTML="Masukkan email.";
+
+return;
 
 }
 
-// ================================
-// PROSES LOGIN
-// ================================
+if(password==""){
 
-function login() {
+info.innerHTML="Masukkan password.";
 
-  const email =
-    document.getElementById("email").value;
-
-  const password =
-    document.getElementById("password").value;
-
-  const info =
-    document.getElementById("info");
-
-  info.innerHTML = "Sedang login...";
-
-  signInWithEmailAndPassword(
-    auth,
-    email,
-    password
-  )
-
-  .then(() => {
-
-    info.innerHTML = "Login berhasil";
-
-  })
-
-  .catch((err) => {
-
-    info.innerHTML = err.message;
-
-  });
+return;
 
 }
-// ================================
+
+info.innerHTML="Sedang login...";
+
+try{
+
+await login(email,password);
+
+info.innerHTML="Login berhasil...";
+
+}catch(err){
+
+switch(err.code){
+
+case "auth/invalid-email":
+
+info.innerHTML="Email tidak valid.";
+
+break;
+
+case "auth/user-not-found":
+
+info.innerHTML="Email tidak ditemukan.";
+
+break;
+
+case "auth/wrong-password":
+
+info.innerHTML="Password salah.";
+
+break;
+
+case "auth/invalid-credential":
+
+info.innerHTML="Email atau password salah.";
+
+break;
+
+default:
+
+info.innerHTML=err.message;
+
+}
+
+}
+
+}
+
+// ===============================
 // DASHBOARD
-// ================================
+// ===============================
 
-function dashboard(user) {
+function dashboard(user){
 
-  app.innerHTML = `
-
-  <header class="header">
-
-      <div>
-
-          <h2>SIGAP RANI</h2>
-
-          <small>${user.email}</small>
-
-      </div>
-
-      <button id="logout">
-
-          Logout
-
-      </button>
-
-  </header>
-
-  <main>
-
-      <div class="menu">
-
-          <button id="scan">
-              📷
-              <br>
-              Scan QR
-          </button>
-
-          <button id="siswa">
-              👨‍🎓
-              <br>
-              Data Siswa
-          </button>
-
-          <button id="guru">
-              👩‍🏫
-              <br>
-              Data Guru
-          </button>
-
-          <button id="kelas">
-              🏫
-              <br>
-              Data Kelas
-          </button>
-
-          <button id="mapel">
-              📚
-              <br>
-              Data Mapel
-          </button>
-
-          <button id="rekap">
-              📊
-              <br>
-              Rekap
-          </button>
-
-      </div>
-
-      <div id="content"
-           style="margin-top:25px;"></div>
-
-  </main>
-
-  `;
-
-  // Logout
-  document
-    .getElementById("logout")
-    .onclick = () => {
-
-      signOut(auth);
-
-    };
-
-  // Semua tombol menu
-  document
-    .getElementById("kelas")
-    .onclick = tampilKelas;
-
-  document
-    .getElementById("scan")
-    .onclick = () => {
-
-      document.getElementById("content").innerHTML =
-      "<h3>🚧 Modul Scan QR sedang dibuat...</h3>";
-
-    };
-
-  document
-    .getElementById("siswa")
-    .onclick = () => {
-
-      document.getElementById("content").innerHTML =
-      "<h3>🚧 Modul Data Siswa sedang dibuat...</h3>";
-
-    };
-
-  document
-    .getElementById("guru")
-    .onclick = () => {
-
-      document.getElementById("content").innerHTML =
-      "<h3>🚧 Modul Data Guru sedang dibuat...</h3>";
-
-    };
-
-  document
-    .getElementById("mapel")
-    .onclick = () => {
-
-      document.getElementById("content").innerHTML =
-      "<h3>🚧 Modul Data Mapel sedang dibuat...</h3>";
-
-    };
-
-  document
-    .getElementById("rekap")
-    .onclick = () => {
-
-      document.getElementById("content").innerHTML =
-      "<h3>🚧 Modul Rekap sedang dibuat...</h3>";
-
-    };
+tampilDashboard(user);
 
 }
-// ================================
-// DATA KELAS
-// ================================
-async function tampilKelas() {
+// =====================================
+// SIGAP RANI V3
+// app.js
+// BAGIAN 2
+// =====================================
 
-  const content = document.getElementById("content");
-
-  content.innerHTML = "Memuat data...";
-
-  try {
-
-    const snapshot = await getDocs(collection(db, "kelas"));
-
-    console.log("Jumlah dokumen:", snapshot.size);
-
-    if (snapshot.empty) {
-      content.innerHTML = "<h3>Tidak ada data kelas.</h3>";
-      return;
-    }
-
-    let html = `
-      <h2>🏫 DATA KELAS</h2>
-
-      <table border="1" cellpadding="8" cellspacing="0" width="100%">
-      <tr>
-        <th>No</th>
-        <th>Nama Kelas</th>
-        <th>Tingkat</th>
-        <th>Wali Kelas</th>
-      </tr>
-    `;
-
-    let no = 1;
-
-    snapshot.forEach((doc) => {
-
-      const d = doc.data();
-
-      console.log(doc.id, d);
-
-      html += `
-        <tr>
-          <td>${no++}</td>
-          <td>${d.nama}</td>
-          <td>${d.tingkat}</td>
-          <td>${d.wali}</td>
-        </tr>
-      `;
-
-    });
-
-    html += "</table>";
-
-    content.innerHTML = html;
-
-  } catch (e) {
-
-    console.error(e);
-
-    content.innerHTML = `
-      <h3 style="color:red;">ERROR</h3>
-      <pre>${e.message}</pre>
-    `;
-
-  }
-
-}
-
-}
-// ================================
+// ===============================
 // CEK STATUS LOGIN
-// ================================
+// ===============================
 
-onAuthStateChanged(auth, (user) => {
+cekLogin((user)=>{
 
-  if (user) {
+if(user){
 
-    dashboard(user);
+dashboard(user);
 
-  } else {
+}else{
 
-    tampilLogin();
+tampilLogin();
 
-  }
+}
 
 });
+
+// ===============================
+// UTILITAS
+// ===============================
+
+window.$ = function(id){
+
+return document.getElementById(id);
+
+};
+
+window.tampilPesan = function(pesan){
+
+const info = document.getElementById("info");
+
+if(info){
+
+info.innerHTML = pesan;
+
+}
+
+};
+
+// ===============================
+// VERSI APLIKASI
+// ===============================
+
+console.log("================================");
+console.log("SIGAP RANI V3");
+console.log("Versi : 3.0");
+console.log("Developer : Re Lisa & ChatGPT");
+console.log("================================");
