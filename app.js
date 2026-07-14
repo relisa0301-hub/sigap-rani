@@ -1,271 +1,381 @@
 // =====================================
 // SIGAP RANI V2
 // APP.JS
+// BAGIAN 1
 // =====================================
 
 import { auth, db } from "./firebase.js";
-import {
-collection,
-getDocs
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
-
 
 import {
-onAuthStateChanged,
-signInWithEmailAndPassword,
-signOut
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
+import {
+  collection,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
 const app = document.getElementById("app");
-
-// ================================
-// HALAMAN LOGIN
-// ================================
-
-function tampilLogin(){
-
-app.innerHTML=`
-
-<div class="login">
-
-<img src="logo.png" class="logo">
-
-<h1>SIGAP RANI</h1>
-
-<p>Sistem Informasi Gadget Absensi Pelajar</p>
-
-<input
-id="email"
-type="email"
-placeholder="Email Guru">
-
-<input
-id="password"
-type="password"
-placeholder="Password">
-
-<button id="btnLogin">
-
-MASUK
-
-</button>
-
-<div id="info"></div>
-
-</div>
-
-`;
-
-document
-.getElementById("btnLogin")
-.onclick=login;
-
-}
 
 // ================================
 // LOGIN
 // ================================
 
-function login(){
+function tampilLogin() {
 
-const email=
-document.getElementById("email").value;
+  app.innerHTML = `
+  <div class="login">
 
-const password=
-document.getElementById("password").value;
+      <img src="logo.png" class="logo">
 
-const info=
-document.getElementById("info");
+      <h1>SIGAP RANI</h1>
 
-info.innerHTML="Sedang login...";
+      <p>Sistem Informasi Gadget Absensi Pelajar</p>
 
-signInWithEmailAndPassword(
-auth,
-email,
-password
-)
+      <input
+        id="email"
+        type="email"
+        placeholder="Email Guru">
 
-.then(()=>{
+      <input
+        id="password"
+        type="password"
+        placeholder="Password">
 
-info.innerHTML="Login berhasil";
+      <button id="btnLogin">
 
-})
+        MASUK
 
-.catch((err)=>{
+      </button>
 
-info.innerHTML=err.message;
+      <div id="info"></div>
 
-});
+  </div>
+  `;
+
+  document
+    .getElementById("btnLogin")
+    .onclick = login;
 
 }
 
+// ================================
+// PROSES LOGIN
+// ================================
+
+function login() {
+
+  const email =
+    document.getElementById("email").value;
+
+  const password =
+    document.getElementById("password").value;
+
+  const info =
+    document.getElementById("info");
+
+  info.innerHTML = "Sedang login...";
+
+  signInWithEmailAndPassword(
+    auth,
+    email,
+    password
+  )
+
+  .then(() => {
+
+    info.innerHTML = "Login berhasil";
+
+  })
+
+  .catch((err) => {
+
+    info.innerHTML = err.message;
+
+  });
+
+}
 // ================================
 // DASHBOARD
 // ================================
 
-function dashboard(user){
+function dashboard(user) {
 
-app.innerHTML=`
+  app.innerHTML = `
 
-<header>
+  <header class="header">
 
-<h2>
+      <div>
 
-SIGAP RANI
+          <h2>SIGAP RANI</h2>
 
-</h2>
+          <small>${user.email}</small>
 
-<p>
+      </div>
 
-${user.email}
+      <button id="logout">
 
-</p>
+          Logout
 
-<button id="logout">
+      </button>
 
-Logout
+  </header>
 
-</button>
+  <main>
 
-</header>
+      <div class="menu">
 
-<main>
+          <button id="scan">
+              📷
+              <br>
+              Scan QR
+          </button>
 
-<div class="menu">
+          <button id="siswa">
+              👨‍🎓
+              <br>
+              Data Siswa
+          </button>
 
-<button id="scan">
+          <button id="guru">
+              👩‍🏫
+              <br>
+              Data Guru
+          </button>
 
-📷 Scan QR
+          <button id="kelas">
+              🏫
+              <br>
+              Data Kelas
+          </button>
 
-</button>
+          <button id="mapel">
+              📚
+              <br>
+              Data Mapel
+          </button>
 
-<button id="siswa">
+          <button id="rekap">
+              📊
+              <br>
+              Rekap
+          </button>
 
-👨‍🎓 Data Siswa
+      </div>
 
-</button>
+      <div id="content"
+           style="margin-top:25px;"></div>
 
-<button id="guru">
+  </main>
 
-👩‍🏫 Data Guru
+  `;
 
-</button>
+  // Logout
+  document
+    .getElementById("logout")
+    .onclick = () => {
 
-<button id="kelas">
+      signOut(auth);
 
-🏫 Data Kelas
+    };
 
-</button>
+  // Semua tombol menu
+  document
+    .getElementById("kelas")
+    .onclick = tampilKelas;
 
-<button id="mapel">
+  document
+    .getElementById("scan")
+    .onclick = () => {
 
-📚 Data Mapel
+      document.getElementById("content").innerHTML =
+      "<h3>🚧 Modul Scan QR sedang dibuat...</h3>";
 
-</button>
+    };
 
-<button id="rekap">
+  document
+    .getElementById("siswa")
+    .onclick = () => {
 
-📊 Rekap
+      document.getElementById("content").innerHTML =
+      "<h3>🚧 Modul Data Siswa sedang dibuat...</h3>";
 
-</button>
+    };
 
-</div>
+  document
+    .getElementById("guru")
+    .onclick = () => {
 
-</main>
+      document.getElementById("content").innerHTML =
+      "<h3>🚧 Modul Data Guru sedang dibuat...</h3>";
 
-`;
+    };
 
-document
-.getElementById("logout")
-.onclick=()=>{
+  document
+    .getElementById("mapel")
+    .onclick = () => {
 
-signOut(auth);
+      document.getElementById("content").innerHTML =
+      "<h3>🚧 Modul Data Mapel sedang dibuat...</h3>";
 
-};
-document
-.getElementById("kelas")
-.onclick=tampilKelas;
+    };
 
-  
+  document
+    .getElementById("rekap")
+    .onclick = () => {
+
+      document.getElementById("content").innerHTML =
+      "<h3>🚧 Modul Rekap sedang dibuat...</h3>";
+
+    };
+
 }
-
 // ================================
-// CEK LOGIN
-// ================================
-
-onAuthStateChanged(auth,(user)=>{
-
-if(user){
-
-dashboard(user);
-
-}else{
-
-tampilLogin();
-
-}
-  // ================================
 // DATA KELAS
 // ================================
 
-async function tampilKelas(){
+async function tampilKelas() {
 
-const snap=await getDocs(collection(db,"kelas"));
+  const content =
+    document.getElementById("content");
 
-let html=`
+  content.innerHTML =
+    "<h3>Memuat data kelas...</h3>";
 
-<header>
+  try {
 
-<h2>DATA KELAS</h2>
+    const snapshot =
+      await getDocs(
+        collection(db, "kelas")
+      );
 
-<button id="kembali">
+    let html = `
 
-Kembali
+      <h2>🏫 DATA KELAS</h2>
 
-</button>
+      <table
+      style="
+      width:100%;
+      border-collapse:collapse;
+      margin-top:20px;
+      ">
 
-</header>
+      <tr
+      style="
+      background:#800000;
+      color:white;
+      ">
 
-<div style="padding:20px;">
+      <th style="padding:10px;">No</th>
 
-`;
+      <th>Nama Kelas</th>
 
-snap.forEach((doc)=>{
+      <th>Tingkat</th>
 
-const d=doc.data();
+      <th>Wali Kelas</th>
 
-html+=`
+      </tr>
 
-<div style="background:white;
-padding:15px;
-margin-bottom:15px;
-border-radius:10px;
-box-shadow:0 2px 10px rgba(0,0,0,.15);">
+    `;
 
-<h3>Kelas ${d.nama}</h3>
+    let no = 1;
 
-<p>Tingkat : ${d.tingkat}</p>
+    snapshot.forEach((doc) => {
 
-<p>Wali Kelas : ${d.wali}</p>
+      const d = doc.data();
 
-</div>
+      html += `
 
-`;
+      <tr>
 
-});
+      <td
+      style="
+      border:1px solid #ddd;
+      padding:10px;
+      text-align:center;
+      ">
 
-html+="</div>";
+      ${no++}
 
-app.innerHTML=html;
+      </td>
 
-document
-.getElementById("kembali")
-.onclick=()=>{
+      <td
+      style="
+      border:1px solid #ddd;
+      padding:10px;
+      ">
 
-dashboard(auth.currentUser);
+      ${d.nama}
 
-};
+      </td>
+
+      <td
+      style="
+      border:1px solid #ddd;
+      padding:10px;
+      ">
+
+      ${d.tingkat}
+
+      </td>
+
+      <td
+      style="
+      border:1px solid #ddd;
+      padding:10px;
+      ">
+
+      ${d.wali}
+
+      </td>
+
+      </tr>
+
+      `;
+
+    });
+
+    html += "</table>";
+
+    content.innerHTML = html;
+
+  } catch (err) {
+
+    content.innerHTML = `
+
+    <h3 style="color:red;">
+
+    Gagal membaca Firestore
+
+    </h3>
+
+    <pre>
+
+${err}
+
+    </pre>
+
+    `;
+
+  }
 
 }
+// ================================
+// CEK STATUS LOGIN
+// ================================
+
+onAuthStateChanged(auth, (user) => {
+
+  if (user) {
+
+    dashboard(user);
+
+  } else {
+
+    tampilLogin();
+
+  }
 
 });
