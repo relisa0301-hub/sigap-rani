@@ -235,49 +235,33 @@ function dashboard(user) {
 // ================================
 // DATA KELAS
 // ================================
-
 async function tampilKelas() {
 
-  const content =
-    document.getElementById("content");
+  const content = document.getElementById("content");
 
-  content.innerHTML =
-    "<h3>Memuat data kelas...</h3>";
+  content.innerHTML = "Memuat data...";
 
   try {
 
-    const snapshot =
-      await getDocs(
-        collection(db, "kelas")
-      );
+    const snapshot = await getDocs(collection(db, "kelas"));
+
+    console.log("Jumlah dokumen:", snapshot.size);
+
+    if (snapshot.empty) {
+      content.innerHTML = "<h3>Tidak ada data kelas.</h3>";
+      return;
+    }
 
     let html = `
-
       <h2>🏫 DATA KELAS</h2>
 
-      <table
-      style="
-      width:100%;
-      border-collapse:collapse;
-      margin-top:20px;
-      ">
-
-      <tr
-      style="
-      background:#800000;
-      color:white;
-      ">
-
-      <th style="padding:10px;">No</th>
-
-      <th>Nama Kelas</th>
-
-      <th>Tingkat</th>
-
-      <th>Wali Kelas</th>
-
+      <table border="1" cellpadding="8" cellspacing="0" width="100%">
+      <tr>
+        <th>No</th>
+        <th>Nama Kelas</th>
+        <th>Tingkat</th>
+        <th>Wali Kelas</th>
       </tr>
-
     `;
 
     let no = 1;
@@ -286,53 +270,15 @@ async function tampilKelas() {
 
       const d = doc.data();
 
+      console.log(doc.id, d);
+
       html += `
-
-      <tr>
-
-      <td
-      style="
-      border:1px solid #ddd;
-      padding:10px;
-      text-align:center;
-      ">
-
-      ${no++}
-
-      </td>
-
-      <td
-      style="
-      border:1px solid #ddd;
-      padding:10px;
-      ">
-
-      ${d.nama}
-
-      </td>
-
-      <td
-      style="
-      border:1px solid #ddd;
-      padding:10px;
-      ">
-
-      ${d.tingkat}
-
-      </td>
-
-      <td
-      style="
-      border:1px solid #ddd;
-      padding:10px;
-      ">
-
-      ${d.wali}
-
-      </td>
-
-      </tr>
-
+        <tr>
+          <td>${no++}</td>
+          <td>${d.nama}</td>
+          <td>${d.tingkat}</td>
+          <td>${d.wali}</td>
+        </tr>
       `;
 
     });
@@ -341,25 +287,18 @@ async function tampilKelas() {
 
     content.innerHTML = html;
 
-  } catch (err) {
+  } catch (e) {
+
+    console.error(e);
 
     content.innerHTML = `
-
-    <h3 style="color:red;">
-
-    Gagal membaca Firestore
-
-    </h3>
-
-    <pre>
-
-${err}
-
-    </pre>
-
+      <h3 style="color:red;">ERROR</h3>
+      <pre>${e.message}</pre>
     `;
 
   }
+
+}
 
 }
 // ================================
