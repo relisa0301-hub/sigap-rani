@@ -1,13 +1,20 @@
 // =====================================
 // SIGAP RANI V3
 // js/dashboard.js
+// BAGIAN 1
 // =====================================
 
 import { logout } from "./auth.js";
+import { tampilKelas } from "./kelas.js";
+import { tampilGuru } from "./guru.js";
+import { tampilSiswa } from "./siswa.js";
+import { tampilMapel } from "./mapel.js";
 
-export function tampilDashboard(user) {
+export function tampilDashboard(user){
 
-document.getElementById("app").innerHTML=`
+const app=document.getElementById("app");
+
+app.innerHTML=`
 
 <header class="header">
 
@@ -32,44 +39,74 @@ Logout
 <div class="menu">
 
 <button id="scan">
+
 📷
+
 <br>
+
 Scan QR
+
 </button>
 
 <button id="siswa">
+
 👨‍🎓
+
 <br>
+
 Data Siswa
+
 </button>
 
 <button id="guru">
-👨‍🏫
+
+👩‍🏫
+
 <br>
+
 Data Guru
+
 </button>
 
 <button id="kelas">
+
 🏫
+
 <br>
+
 Data Kelas
+
 </button>
 
 <button id="mapel">
+
 📚
+
 <br>
+
 Data Mapel
+
 </button>
 
 <button id="rekap">
+
 📊
+
 <br>
+
 Rekap
+
 </button>
 
 </div>
 
-<div id="content"></div>
+<div id="content">
+
+<h2>Selamat Datang</h2>
+
+<p>Silakan pilih menu.</p>
+
+</div>
 
 </main>
 
@@ -80,56 +117,36 @@ document
 .onclick=logout;
 
 document
+.getElementById("kelas")
+.onclick=tampilKelas;
+
+document
+.getElementById("guru")
+.onclick=tampilGuru;
+
+document
+.getElementById("siswa")
+.onclick=tampilSiswa;
+
+document
+.getElementById("mapel")
+.onclick=tampilMapel;
+  // =====================================
+// SIGAP RANI V3
+// js/dashboard.js
+// BAGIAN 2
+// =====================================
+
+document
 .getElementById("scan")
 .onclick=()=>{
 
 document.getElementById("content").innerHTML=`
-<h2>SCAN QR</h2>
-<p>Modul sedang dibuat...</p>
-`;
 
-};
+<h2>📷 SCAN QR</h2>
 
-document
-.getElementById("siswa")
-.onclick=()=>{
+<p>Modul Scan QR akan dihubungkan pada tahap berikutnya.</p>
 
-document.getElementById("content").innerHTML=`
-<h2>DATA SISWA</h2>
-<p>Modul sedang dibuat...</p>
-`;
-
-};
-
-document
-.getElementById("guru")
-.onclick=()=>{
-
-document.getElementById("content").innerHTML=`
-<h2>DATA GURU</h2>
-<p>Modul sedang dibuat...</p>
-`;
-
-};
-
-document
-.getElementById("kelas")
-.onclick=()=>{
-
-document.getElementById("content").innerHTML=`
-<h2>DATA KELAS</h2>
-<p>Modul sedang dibuat...</p>
-`;
-
-};
-
-document
-.getElementById("mapel")
-.onclick=()=>{
-
-document.getElementById("content").innerHTML=`
-<h2>DATA MAPEL</h2>
-<p>Modul sedang dibuat...</p>
 `;
 
 };
@@ -139,8 +156,11 @@ document
 .onclick=()=>{
 
 document.getElementById("content").innerHTML=`
-<h2>REKAP ABSENSI</h2>
-<p>Modul sedang dibuat...</p>
+
+<h2>📊 REKAP ABSENSI</h2>
+
+<p>Modul Rekap akan dihubungkan pada tahap berikutnya.</p>
+
 `;
 
 };
